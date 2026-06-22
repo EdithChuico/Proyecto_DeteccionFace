@@ -22,23 +22,10 @@ public class EmpleadoController {
     @PostMapping("/enrolar")
     public synchronized ResponseEntity<String> registrarEmpleado(@RequestBody EnrolarRequest request) {
         try {
-            String rutaTrain = "dataset/train/" + request.getEmpleadoId();
-            String rutaTest = "dataset/test/" + request.getEmpleadoId();
-
-            File directorioTrain = new File(rutaTrain);
-            File directorioTest = new File(rutaTest);
-
-            if (!directorioTrain.exists()) directorioTrain.mkdirs();
-            if (!directorioTest.exists()) directorioTest.mkdirs();
-
-            File[] fotosExistentes = directorioTrain.listFiles();
-            int cantidadEnTrain = (fotosExistentes != null) ? fotosExistentes.length : 0;
-
-            String carpetaDestinoFinal;
-            if (cantidadEnTrain < 24) {
-                carpetaDestinoFinal = rutaTrain;
-            } else {
-                carpetaDestinoFinal = rutaTest;
+            // 1. ¡LA NUEVA BARRERA DE SEGURIDAD!
+            // Verificamos antes de gastar internet subiendo cosas
+            if (empleadoRepository.existsById(request.getEmpleadoId())) {
+                return ResponseEntity.badRequest().body("El empleado ya está registrado. Para actualizar sus fotos, debe eliminarlo primero del sistema.");
             }
 
             if (!empleadoRepository.existsById(request.getEmpleadoId())) {
