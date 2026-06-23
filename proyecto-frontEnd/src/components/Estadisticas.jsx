@@ -9,17 +9,31 @@ const Estadisticas = () => {
     // Estados para guardar los datos de la BDD
     const [asistencias, setAsistencias] = useState([]);
     const [totalEmpleados, setTotalEmpleados] = useState(0);
+    const [totalAdmins, setTotalAdmins] = useState(0);
 
-    // Llamamos a tu Backend al cargar la pantalla
+
+    useEffect(() => {
+        const obtenerTotalAdmins = async () => {
+            try {
+                const respuesta = await fetch('http://localhost:8080/api/auth/admins/count');
+                if (respuesta.ok) {
+                    const total = await respuesta.json();
+                    setTotalAdmins(total);
+                }
+            } catch (error) {
+                console.error("Fallo de red al obtener el total de administradores", error);
+            }
+        };
+        obtenerTotalAdmins();
+    }, []);
+
     useEffect(() => {
         const traerDatos = async () => {
             try {
-                // Traemos todas las asistencias
                 const resAsist = await fetch('http://localhost:8080/api/asistencias/todas');
                 const dataAsist = await resAsist.json();
                 setAsistencias(dataAsist);
 
-                // Traemos todos los empleados para el KPI
                 const resEmp = await fetch('http://localhost:8080/api/empleados/todos');
                 const dataEmp = await resEmp.json();
                 setTotalEmpleados(dataEmp.length);
@@ -94,21 +108,21 @@ const Estadisticas = () => {
             <div className="kpi-grid">
                 <div className="kpi-card kpi-bg-blue">
                     <div className="kpi-body">
-                        <p className="kpi-number">2</p> {/* Puedes hacerlo dinámico luego si tienes roles */}
-                        <p className="kpi-label">Usuarios Admin</p>
+                        <p className="kpi-number">{totalAdmins}</p>
+                        <p className="kpi-label">Administradores</p>
                     </div>
                 </div>
 
                 <div className="kpi-card kpi-bg-teal">
                     <div className="kpi-body">
-                        <p className="kpi-number">{totalEmpleados}</p> {/* 🔥 JALADO DE LA BDD */}
+                        <p className="kpi-number">{totalEmpleados}</p>
                         <p className="kpi-label">Empleados</p>
                     </div>
                 </div>
 
                 <div className="kpi-card kpi-bg-navy">
                     <div className="kpi-body">
-                        <p className="kpi-number">{asistencias.length}</p> {/* 🔥 JALADO DE LA BDD */}
+                        <p className="kpi-number">{asistencias.length}</p>
                         <p className="kpi-label">Asistencias Totales</p>
                     </div>
                 </div>

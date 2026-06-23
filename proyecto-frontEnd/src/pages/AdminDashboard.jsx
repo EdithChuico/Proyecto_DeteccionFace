@@ -1,10 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Webcam from 'react-webcam';
-import { Users, Activity, AlertTriangle, Camera, Check, Loader2, MapPin, Crosshair } from 'lucide-react';
+import { Users, Activity, AlertTriangle, Camera, Check, Loader2, MapPin, Crosshair, LogOut } from 'lucide-react';
 import './AdminDashboard.css';
+import { apiFetch } from '../api';
 import Estadisticas from '../components/Estadisticas';
 
 const AdminDashboard = () => {
+    const navigate = useNavigate();
     const [activeTab, setActiveTab] = useState('configuracion');
     const [listaEmpleados, setListaEmpleados] = useState([]);
     const [listaAsistencias, setListaAsistencias] = useState([]);
@@ -21,16 +24,15 @@ const AdminDashboard = () => {
     const [contadorFotos, setContadorFotos] = useState(0);
     const [enrolando, setEnrolando] = useState(false);
     const [registroCompleto, setRegistroCompleto] = useState(false);
-
-    // CARGAR DATOS REALES DE EMPLEADOS
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [empleadoSeleccionado, setEmpleadoSeleccionado] = useState({ id: '', nombre: '', estado: 'Activo' });
     const cargarDatos = async () => {
         try {
-            // Promesas en paralelo para optimizar el tiempo de respuesta
             const [resEmp, resAsist] = await Promise.all([
                 fetch('http://localhost:8080/api/empleados/todos'),
                 fetch('http://localhost:8080/api/asistencias/todas')
             ]);
-
+            if (!resEmp || !resAsist) return;
             const dataEmp = await resEmp.json();
             const dataAsist = await resAsist.json();
 
@@ -60,6 +62,13 @@ const AdminDashboard = () => {
         } else {
             alert("Tu navegador no soporta geolocalización.");
         }
+    };
+
+    const cerrarSesion = () => {
+        localStorage.removeItem('admin_token');
+        localStorage.removeItem('admin_nombre');
+        localStorage.removeItem('admin_foto');
+        navigate('/login');
     };
 
     const guardarGeocercaEnBD = async () => {
@@ -144,6 +153,38 @@ const AdminDashboard = () => {
         setRegistroCompleto(false);
     };
 
+    const abrirEditarModal = (emp) => {
+        setEmpleadoSeleccionado({ id: emp.id, nombre: emp.nombre, estado: emp.estado || 'Activo' });
+        setIsModalOpen(true);
+    };
+
+    const guardarCambiosEmpleado = async (e) => {
+        e.preventDefault();
+        const adminNombre = localStorage.getItem('admin_nombre') || "Admin Desconocido";
+
+        try {
+            const respuesta = await apiFetch(`http://localhost:8080/api/empleados/actualizar/${empleadoSeleccionado.id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    nombre: empleadoSeleccionado.nombre,
+                    estado: empleadoSeleccionado.estado,
+                    modificadoPor: adminNombre
+                })
+            });
+
+            if (respuesta && respuesta.ok) {
+                setIsModalOpen(false);
+                cargarDatos();
+            } else {
+                alert("Error al actualizar la información del trabajador.");
+            }
+        } catch (error) {
+            console.error(error);
+            alert("Fallo de red al intentar conectar con el servidor.");
+        }
+    };
+
     return (
         <div className="admin-container">
             {/* MENÚ LATERAL */}
@@ -160,7 +201,10 @@ const AdminDashboard = () => {
                         <MapPin size={20} /> Geocerca GPS
                     </button>
                     <button className="nav-btn">
-                        <AlertTriangle size={20} /> Multas
+                        <AlertTriangle size={20} /> Multas (Inhabilitada)
+                    </button>
+                    <button onClick={cerrarSesion} className="nav-btn">
+                        <LogOut size={20} /> Cerrar Sesión
                     </button>
                 </nav>
             </aside>
@@ -288,13 +332,10 @@ const AdminDashboard = () => {
                     </section>
                 )}
 
-
                 {activeTab === 'estadisticas' && (
                     <section className="admin-section">
-                        {/* Nuestro nuevo Dashboard Corporativo */}
                         <Estadisticas />
 
-                        {/* La tabla la puedes colocar justo debajo del Dashboard */}
                         <div className="tabla-container" style={{ marginTop: '20px' }}>
                             <table className="tabla-asistencias">
                                 <thead>
@@ -309,23 +350,19 @@ const AdminDashboard = () => {
                                 </thead>
                                 <tbody>
                                     {listaEmpleados.map((emp) => {
-                                        // Extraer el registro más reciente de asistencia para este empleado
                                         const asistenciasEmpleado = listaAsistencias.filter(a => a.empleadoId === emp.id);
                                         const ultimaAsistencia = asistenciasEmpleado.length > 0
                                             ? asistenciasEmpleado.reduce((prev, current) => (new Date(prev.fechaHora) > new Date(current.fechaHora)) ? prev : current)
                                             : null;
 
-                                        // Formatear los datos extraídos
                                         const horaIngreso = ultimaAsistencia
                                             ? new Date(ultimaAsistencia.fechaHora).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
                                             : "Sin registro";
-                                        const estado = ultimaAsistencia ? ultimaAsistencia.estado : "Inactivo";
+
+                                        const estadoTrabajador = emp.estado || "Activo";
                                         const multa = ultimaAsistencia ? `$${ultimaAsistencia.multa.toFixed(2)}` : "$0.00";
 
-                                        // Determinar la clase visual
-                                        const badgeClass = (estado === "A Tiempo" || estado === "Puntual")
-                                            ? "badge-success"
-                                            : (estado === "Inactivo" ? "" : "badge-danger");
+                                        const badgeClass = estadoTrabajador === "Activo" ? "badge-success" : "badge-danger";
 
                                         return (
                                             <tr key={emp.id}>
@@ -338,13 +375,13 @@ const AdminDashboard = () => {
                                                 </td>
                                                 <td>{horaIngreso}</td>
                                                 <td>
-                                                    <span className={`badge ${badgeClass}`} style={estado === "Inactivo" ? { backgroundColor: '#e2e8f0', color: '#475569' } : {}}>
-                                                        {estado}
+                                                    <span className={`badge ${badgeClass}`} style={estadoTrabajador === "Inactivo" ? { backgroundColor: '#e2e8f0', color: '#475569' } : {}}>
+                                                        {estadoTrabajador}
                                                     </span>
                                                 </td>
                                                 <td>{multa}</td>
                                                 <td>
-                                                    <button className="btn-accion btn-editar">Editar</button>
+                                                    <button onClick={() => abrirEditarModal(emp)} className="btn-accion btn-editar">Editar</button>
                                                 </td>
                                             </tr>
                                         );
@@ -355,6 +392,54 @@ const AdminDashboard = () => {
                     </section>
                 )}
 
+                {/* ✨ MODAL DE EDICIÓN Y DESACTIVACIÓN */}
+                {isModalOpen && (
+                    <div className="modal-overlay">
+                        <div className="modal-content">
+                            <h3 className="modal-header">Modificar Datos de Trabajador</h3>
+                            <form onSubmit={guardarCambiosEmpleado}>
+
+                                <div className="form-group">
+                                    <label className="form-label">Cédula / ID (Solo lectura):</label>
+                                    {/* La cédula está deshabilitada porque cambiar la Primary Key en SQL puede romper las relaciones de asistencia */}
+                                    <input type="text" className="input-text" value={empleadoSeleccionado.id} disabled style={{ backgroundColor: '#f1f5f9', cursor: 'not-allowed' }} />
+                                </div>
+
+                                <div className="form-group" style={{ marginTop: '15px' }}>
+                                    <label className="form-label">Nombre Completo:</label>
+                                    <input
+                                        type="text"
+                                        className="input-text"
+                                        value={empleadoSeleccionado.nombre}
+                                        onChange={(e) => setEmpleadoSeleccionado({ ...empleadoSeleccionado, nombre: e.target.value })}
+                                        required
+                                    />
+                                </div>
+
+                                <div className="form-group" style={{ marginTop: '15px' }}>
+                                    <label className="form-label">Estado de la Cuenta:</label>
+                                    <select
+                                        className="select-custom"
+                                        value={empleadoSeleccionado.estado}
+                                        onChange={(e) => setEmpleadoSeleccionado({ ...empleadoSeleccionado, estado: e.target.value })}
+                                    >
+                                        <option value="Activo">Activo (Habilitado para marcar)</option>
+                                        <option value="Inactivo">Inactivo (Desactivado del sistema)</option>
+                                    </select>
+                                </div>
+
+                                <div className="modal-actions" style={{ display: 'flex', justifyContent: 'flex-end', gap: '10px', marginTop: '20px' }}>
+                                    <button type="button" onClick={() => setIsModalOpen(false)} className="btn-secundario" style={{ padding: '8px 16px', backgroundColor: '#94a3b8', color: 'white', border: 'none', borderRadius: '5px' }}>
+                                        Cancelar
+                                    </button>
+                                    <button type="submit" className="btn-captura" style={{ padding: '8px 16px', margin: 0, border: 'none', borderRadius: '5px' }}>
+                                        Guardar Cambios
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                )}
             </main>
         </div>
     );
