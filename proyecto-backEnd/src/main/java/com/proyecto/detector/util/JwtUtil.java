@@ -13,7 +13,7 @@ public class JwtUtil {
 
     // Llave secreta
     private final String SECRET_KEY = "ServicioSeguroGenerarTokenSeguro12345";
-    private final long EXPIRATION_TIME = 300000;
+    private final long EXPIRATION_TIME = 1200000;
 
     private Key getSigningKey() {
         return Keys.hmacShaKeyFor(SECRET_KEY.getBytes());

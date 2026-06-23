@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement, Title } from 'chart.js';
 import { Doughnut, Bar } from 'react-chartjs-2';
+import { apiFetch } from '../api';
 import './Estadisticas.css';
 
 ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement, Title);
@@ -15,7 +16,7 @@ const Estadisticas = () => {
     useEffect(() => {
         const obtenerTotalAdmins = async () => {
             try {
-                const respuesta = await fetch('http://localhost:8080/api/auth/admins/count');
+                const respuesta = await apiFetch('http://localhost:8080/api/auth/admins/count');
                 if (respuesta.ok) {
                     const total = await respuesta.json();
                     setTotalAdmins(total);
@@ -30,11 +31,11 @@ const Estadisticas = () => {
     useEffect(() => {
         const traerDatos = async () => {
             try {
-                const resAsist = await fetch('http://localhost:8080/api/asistencias/todas');
+                const resAsist = await apiFetch('http://localhost:8080/api/asistencias/todas');
                 const dataAsist = await resAsist.json();
                 setAsistencias(dataAsist);
 
-                const resEmp = await fetch('http://localhost:8080/api/empleados/todos');
+                const resEmp = await apiFetch('http://localhost:8080/api/empleados/todos');
                 const dataEmp = await resEmp.json();
                 setTotalEmpleados(dataEmp.length);
             } catch (error) {

@@ -1,7 +1,7 @@
 import React, { useRef, useState, useCallback, useEffect } from 'react';
 import Webcam from 'react-webcam';
 import { ScanFace, CheckCircle, Loader2, MapPinOff, XCircle } from 'lucide-react';
-import './EmpleadoView.css'; // ¡Llamamos al CSS externo!
+import './EmpleadoView.css';
 
 const calcularDistancia = (lat1, lon1, lat2, lon2) => {
     const R = 6371e3;
@@ -29,6 +29,7 @@ const EmpleadoView = () => {
 
         const validarAcceso = async (coords) => {
             try {
+                // Usamos fetch normal porque esta vista es PÚBLICA
                 const respuesta = await fetch('http://localhost:8080/api/configuracion');
                 const configBD = await respuesta.json();
                 setRadioPermitido(configBD.radioMetros);
@@ -50,6 +51,7 @@ const EmpleadoView = () => {
             }
         };
 
+        // 1. INICIAR RASTREO GPS
         if ("geolocation" in navigator) {
             idRastreoGps = navigator.geolocation.watchPosition(
                 (position) => {
@@ -65,9 +67,30 @@ const EmpleadoView = () => {
             setEstado('FUERA_DE_RANGO');
         }
 
+        // ✨ 2. INICIAR CONEXIÓN WEBSOCKET PARA LA GEOCERCA ✨
+        const socket = new WebSocket('ws://localhost:8080/ws/geo');
+
+        socket.onmessage = (event) => {
+            if (event.data === 'REFRESH_GEO') {
+                console.log("¡El admin actualizó la geocerca! Recalculando ubicación en tiempo real...");
+                // Forzamos al navegador a obtener la ubicación actual y validar con las nuevas reglas
+                navigator.geolocation.getCurrentPosition(
+                    (position) => validarAcceso(position.coords),
+                    (error) => console.error("Error forzando GPS tras WebSocket", error),
+                    { enableHighAccuracy: true }
+                );
+            }
+        };
+
+        socket.onerror = (error) => {
+            console.error("Error en conexión WebSocket de Geocerca", error);
+        };
+
+        // LIMPIEZA AL SALIR
         return () => {
             if (idRastreoGps) navigator.geolocation.clearWatch(idRastreoGps);
             if (idIntervaloBd) clearInterval(idIntervaloBd);
+            socket.close(); // Cerramos el socket para no dejar procesos fantasma
         };
     }, []);
 

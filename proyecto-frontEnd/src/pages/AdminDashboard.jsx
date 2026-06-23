@@ -29,8 +29,8 @@ const AdminDashboard = () => {
     const cargarDatos = async () => {
         try {
             const [resEmp, resAsist] = await Promise.all([
-                fetch('http://localhost:8080/api/empleados/todos'),
-                fetch('http://localhost:8080/api/asistencias/todas')
+                apiFetch('http://localhost:8080/api/empleados/todos'),
+                apiFetch('http://localhost:8080/api/asistencias/todas')
             ]);
             if (!resEmp || !resAsist) return;
             const dataEmp = await resEmp.json();
@@ -73,7 +73,7 @@ const AdminDashboard = () => {
 
     const guardarGeocercaEnBD = async () => {
         try {
-            const respuesta = await fetch('http://localhost:8080/api/configuracion', {
+            const respuesta = await apiFetch('http://localhost:8080/api/configuracion', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -117,7 +117,7 @@ const AdminDashboard = () => {
                         clearInterval(intervalo);
 
                         try {
-                            const respuesta = await fetch('http://localhost:8080/api/empleados/enrolar', {
+                            const respuesta = await apiFetch('http://localhost:8080/api/empleados/enrolar', {
                                 method: 'POST',
                                 headers: { 'Content-Type': 'application/json' },
                                 body: JSON.stringify({
@@ -392,7 +392,7 @@ const AdminDashboard = () => {
                     </section>
                 )}
 
-                {/* ✨ MODAL DE EDICIÓN Y DESACTIVACIÓN */}
+                {/*  MODAL DE EDICIÓN Y DESACTIVACIÓN */}
                 {isModalOpen && (
                     <div className="modal-overlay">
                         <div className="modal-content">
