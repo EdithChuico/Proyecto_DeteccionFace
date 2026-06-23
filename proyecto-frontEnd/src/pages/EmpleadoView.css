@@ -1,0 +1,171 @@
+/* EmpleadoView.css */
+
+.empleado-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f4f7f6;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.empleado-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.titulo {
+    margin-bottom: 20px;
+    color: #1e293b;
+}
+
+.input-cedula {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    font-size: 16px;
+    text-align: center;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.input-cedula:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.camara-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: #e2e8f0;
+    margin-bottom: 20px;
+}
+
+.pantalla-mensaje {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Colores de estados */
+.bg-esperando {
+    background-color: #f8fafc;
+    color: #334155;
+}
+
+.bg-error {
+    background-color: #fff1f2;
+    color: #be123c;
+}
+
+.bg-exito {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.texto-error {
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 0 15px;
+    line-height: 1.4;
+}
+
+.texto-hora {
+    font-size: 28px;
+    font-weight: 900;
+    margin: 15px 0 5px 0;
+}
+
+.btn-reintentar {
+    margin-top: 25px;
+    padding: 10px 20px;
+    background-color: #e11d48;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(225, 29, 72, 0.2);
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn-reintentar:hover {
+    background-color: #be123c;
+}
+
+.btn-reintentar:active {
+    transform: scale(0.95);
+}
+
+.overlay-rostro {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    width: 60%;
+    height: 80%;
+    border: 4px dashed rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.btn-principal {
+    width: 100%;
+    padding: 15px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn-esperando {
+    background-color: #2563eb;
+    cursor: pointer;
+}
+
+.btn-esperando:hover {
+    background-color: #1d4ed8;
+}
+
+.btn-esperando:active {
+    transform: scale(0.98);
+}
+
+.btn-deshabilitado {
+    background-color: #94a3b8;
+    cursor: not-allowed;
+}
+
+.spinner {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}

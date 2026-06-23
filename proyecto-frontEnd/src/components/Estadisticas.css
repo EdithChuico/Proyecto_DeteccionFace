@@ -1,0 +1,98 @@
+/* Estadisticas.css */
+
+.dashboard-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+/* === GRID DE KPIs (TARJETAS SUPERIORES) === */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.kpi-card {
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.kpi-bg-blue {
+    background-color: #007bff;
+}
+
+.kpi-bg-gray {
+    background-color: #6c757d;
+}
+
+.kpi-bg-teal {
+    background-color: #17a2b8;
+}
+
+.kpi-bg-navy {
+    background-color: #001f3f;
+}
+
+.kpi-body {
+    padding: 20px;
+}
+
+.kpi-number {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1;
+}
+
+.kpi-label {
+    font-size: 14px;
+    margin-top: 5px;
+    opacity: 0.9;
+}
+
+/* === GRID DE GRÁFICOS (PANELES INFERIORES) === */
+.charts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.chart-panel {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+
+.chart-header {
+    background-color: #17a2b8;
+    /* El color turquesa de tu imagen */
+    color: white;
+    padding: 12px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chart-title {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.chart-body {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    /* Altura fija para que ambos gráficos se vean alineados */
+}
