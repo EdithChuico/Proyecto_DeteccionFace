@@ -27,4 +27,10 @@ public class JwtUtil {
                 .signWith(getSigningKey(), SignatureAlgorithm.HS256)
                 .compact();
     }
+    public void validarToken(String token) {
+        Jwts.parserBuilder()
+                .setSigningKey(getSigningKey())
+                .build()
+                .parseClaimsJws(token); // Si está vencido (pasaron los 60000ms), esto "explota" y lanza una excepción.
+    }
 }
