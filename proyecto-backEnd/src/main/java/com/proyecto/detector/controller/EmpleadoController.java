@@ -50,6 +50,11 @@ public class EmpleadoController {
             return ResponseEntity.status(500).body("Error al organizar el dataset: " + e.getMessage());
         }
     }
+    // En EmpleadoController.java
+    @GetMapping("/todos")
+    public List<Empleado> obtenerTodosLosEmpleados() {
+        return empleadoRepository.findAll();
+    }
 }
 
 // DTO para recibir los datos desde React (ESTO ERA LO QUE FALTABA)
