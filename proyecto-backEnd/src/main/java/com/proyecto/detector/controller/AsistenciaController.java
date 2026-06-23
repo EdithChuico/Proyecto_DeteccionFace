@@ -1,70 +1,116 @@
 package com.proyecto.detector.controller;
 
+import com.proyecto.detector.model.Asistencia;
+import com.proyecto.detector.model.Empleado;
+import com.proyecto.detector.repository.AsistenciaRepository;
+import com.proyecto.detector.repository.EmpleadoRepository;
+import com.proyecto.detector.service.IAAdapterService;
+import com.proyecto.detector.service.PocketBaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import com.proyecto.detector.service.AsistenciaService;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/asistencias")
-@CrossOrigin(origins = "*") // Para que React (localhost:3000) pueda comunicarse
+@CrossOrigin(origins = "*")
 public class AsistenciaController {
 
-    @Autowired
-    private AsistenciaService asistenciaService;
+    @Autowired private AsistenciaRepository asistenciaRepository;
+    @Autowired private EmpleadoRepository empleadoRepository;
+    @Autowired private PocketBaseService pocketBaseService;
+    @Autowired private IAAdapterService iaAdapterService;
 
-    // ENDPOINT PARA EL EMPLEADO (El que dispara el hilo)
     @PostMapping("/marcar")
-    public ResponseEntity<String> marcarAsistencia(@RequestBody MarcarRequest request) {
-        // Retornamos un "Estado Pendiente" inmediatamente (Teorema CAP: Consistencia)
-        // Y delegamos el procesamiento pesado al hilo en segundo plano
-        asistenciaService.procesarAsistenciaFacial(request.getEmpleadoId(), request.getFotoBase64());
+    public ResponseEntity<?> marcarAsistencia(@RequestBody MarcarRequest request) {
+        try {
+            // 1. Buscar si el empleado existe en PostgreSQL
+            Optional<Empleado> empOpt = empleadoRepository.findById(request.getEmpleadoId());
+            if (empOpt.isEmpty()) {
+                return ResponseEntity.status(404).body("Error: Empleado no registrado en el sistema.");
+            }
+            Empleado empleado = empOpt.get();
 
-        return ResponseEntity.accepted().body("Validación facial en proceso...");
+            // 2. REGLA: No registrar dos veces el mismo día (Lo hacemos ANTES de la IA para ahorrar recursos)
+            LocalDateTime inicioDia = LocalDate.now().atStartOfDay();
+            LocalDateTime finDia = LocalDate.now().atTime(LocalTime.MAX);
+
+            if (asistenciaRepository.existsByEmpleadoIdAndFechaHoraBetween(empleado.getId(), inicioDia, finDia)) {
+                return ResponseEntity.status(400).body("Acceso denegado: Ya registraste tu asistencia el día de hoy.");
+            }
+
+            // 3. Traer las fotos seguras desde PocketBase
+            List<String> fotosDataset = pocketBaseService.obtenerFotosBase64(empleado.getRutaDataset());
+
+            // 4. PATRÓN ADAPTER: Consultar al microservicio de Python
+            boolean esValido = iaAdapterService.verificarRostro(request.getFotoBase64(), fotosDataset);
+
+            if (!esValido) {
+                return ResponseEntity.status(401).body("Acceso denegado: Rostro no coincide con la identidad.");
+            }
+
+            // 5. Si la IA dice que es válido y no había marcado hoy, guardamos la asistencia real
+            Asistencia nuevaAsistencia = new Asistencia();
+            nuevaAsistencia.setEmpleadoId(empleado.getId());
+
+            LocalDateTime ahora = LocalDateTime.now();
+            nuevaAsistencia.setFechaHora(ahora);
+
+            // REGLA DE NEGOCIO: Si llega después de las 08:00:59, es "Tarde"
+            if (ahora.toLocalTime().isAfter(LocalTime.of(8, 0, 59))) {
+                nuevaAsistencia.setEstado("Tarde");
+                nuevaAsistencia.setMulta(5.00);
+            } else {
+                nuevaAsistencia.setEstado("Puntual");
+                nuevaAsistencia.setMulta(0.00);
+            }
+
+            asistenciaRepository.save(nuevaAsistencia);
+
+            return ResponseEntity.ok(nuevaAsistencia);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(500).body("Error interno del servidor: " + e.getMessage());
+        }
     }
 
-    // --- ENDPOINTS CRUD PARA EL ADMIN ---
-    @GetMapping
-    public ResponseEntity<?> obtenerTodosLosRegistros() {
-        // Aquí iría: return ResponseEntity.ok(repository.findAll());
-        return ResponseEntity.ok("Devolviendo lista de asistencias (Simulado)");
+    @GetMapping("/todas")
+    public List<Asistencia> obtenerTodas() {
+        return asistenciaRepository.findAll();
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<?> eliminarRegistro(@PathVariable Long id) {
-        // Aquí iría la lógica para borrar una asistencia falsa
-        return ResponseEntity.ok("Registro eliminado correctamente");
+    // Endpoint especializado para los gráficos (Actualizado con los nuevos estados)
+    @GetMapping("/estadisticas")
+    public ResponseEntity<Map<String, Long>> obtenerResumen() {
+        List<Asistencia> asistencias = asistenciaRepository.findAll();
+
+        long puntuales = asistencias.stream().filter(a -> "Puntual".equals(a.getEstado())).count();
+        long atrasos = asistencias.stream().filter(a -> "Tarde".equals(a.getEstado())).count();
+
+        Map<String, Long> resumen = new HashMap<>();
+        resumen.put("puntuales", puntuales);
+        resumen.put("atrasos", atrasos);
+        resumen.put("total", (long) asistencias.size());
+
+        return ResponseEntity.ok(resumen);
     }
 }
 
-// Clase de apoyo para recibir el JSON
 class MarcarRequest {
-
     private String empleadoId;
     private String fotoBase64;
 
     // Getters y Setters
-    public String getEmpleadoId() {
-        return empleadoId;
-    }
-
-    public void setEmpleadoId(String empleadoId) {
-        this.empleadoId = empleadoId;
-    }
-
-    public String getFotoBase64() {
-        return fotoBase64;
-    }
-
-    public void setFotoBase64(String fotoBase64) {
-        this.fotoBase64 = fotoBase64;
-    }
+    public String getEmpleadoId() { return empleadoId; }
+    public void setEmpleadoId(String empleadoId) { this.empleadoId = empleadoId; }
+    public String getFotoBase64() { return fotoBase64; }
+    public void setFotoBase64(String fotoBase64) { this.fotoBase64 = fotoBase64; }
 }

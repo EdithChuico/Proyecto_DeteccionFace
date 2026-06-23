@@ -1,0 +1,37 @@
+Fase 1: El Empleado (Geocerca y PWA)
+[X] Geofencing (GPS): Antes de encender la cámara, React debe pedir permisos de ubicación. Si la latitud/longitud del celular no está dentro del radio de la universidad o empresa (ej. 50 metros), se bloquea el botón azul.
+
+[ ] PWA (Progressive Web App): Configurar el archivo manifest.json y el service-worker en React para que el empleado pueda "instalar" la página web como una app en su celular.
+
+[ ] Patrón Proxy (Aplicado aquí): Crearemos un "Proxy de Ubicación". En lugar de que el botón llame directamente a la cámara, llama al Proxy. El Proxy verifica el GPS; si estás lejos, bloquea la acción. Si estás cerca, permite usar la cámara.
+
+Fase 2: Backend y Base de Datos (PostgreSQL)
+[ ] Conexión Real al CRUD: Como ya pusiste el link de Neon.tech en tu application.properties, tu base de datos ya está conectada. Lo que falta es crear la entidad Asistencia.java y usar el AsistenciaRepository.save() para que la hora de llegada, el ID y la multa se guarden en PostgreSQL en lugar de ser datos estáticos.
+
+[ ] Patrón Observer (Aplicado aquí): Esto ya lo empezamos con los WebSockets. Cuando el repositorio guarda una nueva asistencia (Sujeto), notifica automáticamente a todos los clientes conectados (Observadores = El Dashboard del Admin) para que la tabla se actualice sin recargar la página.
+
+Fase 3: La Inteligencia Artificial (El Microservicio)
+[ ] Entrenar la IA: Usar el script de Python que vimos antes para entrenar con el dataset de tus compañeros. Recuerda que, por exigencias estrictas de arquitectura, el modelo debe exportarse obligatoriamente como SavedModel y descartar por completo cualquier uso del formato .h5, asegurando así un despliegue óptimo.
+
+[ ] Microservicio Flask: Levantar un servidor pequeño en Python que cargue el SavedModel y reciba la foto.
+
+[ ] Patrón Adapter (Aplicado aquí): Spring Boot (Java) no entiende a los modelos de TensorFlow directamente. Crearemos una clase "Adaptador" en Spring Boot que tome la foto, la convierta al formato HTTP que Python espera, y traduzca la respuesta de Python a un objeto Java que nuestro sistema entienda.
+
+[ ] Patrón Circuit Breaker (Aplicado aquí): ¿Qué pasa si el servidor de Python se apaga o colapsa? Para que tu Spring Boot no explote, usaremos un "Interruptor". Si Python falla, el Circuit Breaker corta la conexión y Spring Boot guarda la asistencia como "Validación Pendiente" en lugar de mostrar una pantalla de error al empleado.
+
+Fase 4: El Administrador (Dashboard Dinámico)
+[X] Gráficos Estadísticos: Instalar una librería como recharts en React para mostrar un diagrama de barras bonito (ej. "Llegadas a tiempo vs Atrasos").
+
+[X] Tablas con Datos Reales: Conectar la tabla que ahora tiene datos "quemados" (falsos) para que haga un fetch (petición GET) a tu base de datos y muestre a los empleados reales.
+
+
+
+-- Usar storage para el guardado de imagenes en la base de datos  PocketBase.io
+Storage: Base de datos diseñada para guardar archivos, multimedia: Genera URLs Y eso si se guarda a ña base de datos
+-- Google tiene su propio Storage.
+-- Se puede guardar por colecciones, no relacional, todos los archivos.
+-- Tambien, para tener una mayor información se pueden tener url's firmadas o temporales
+
+-- ACT: 22/06/2026 5:21AM : Arreglar la parte de estadisticas que quedó fea
+                            Controlar que tome la asistencia a dos personas dentro de un mismo lapso de tiempo
+                            Implementar parte de multas

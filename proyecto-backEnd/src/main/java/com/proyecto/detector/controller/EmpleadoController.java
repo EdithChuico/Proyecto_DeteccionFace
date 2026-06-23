@@ -1,15 +1,15 @@
 package com.proyecto.detector.controller;
 
-import java.util.Base64;
 import com.proyecto.detector.model.Empleado;
 import com.proyecto.detector.repository.EmpleadoRepository;
+import com.proyecto.detector.service.PocketBaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.util.UUID;
+import java.util.ArrayList;
+import java.util.Base64;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/empleados")
@@ -19,35 +19,42 @@ public class EmpleadoController {
     @Autowired
     private EmpleadoRepository empleadoRepository;
 
+    @Autowired
+    private PocketBaseService pocketBaseService;
+
     @PostMapping("/enrolar")
     public synchronized ResponseEntity<String> registrarEmpleado(@RequestBody EnrolarRequest request) {
         try {
-            // 1. ¡LA NUEVA BARRERA DE SEGURIDAD!
             // Verificamos antes de gastar internet subiendo cosas
             if (empleadoRepository.existsById(request.getEmpleadoId())) {
                 return ResponseEntity.badRequest().body("El empleado ya está registrado. Para actualizar sus fotos, debe eliminarlo primero del sistema.");
             }
 
-            if (!empleadoRepository.existsById(request.getEmpleadoId())) {
-                Empleado nuevo = new Empleado();
-                nuevo.setId(request.getEmpleadoId());
-                nuevo.setNombre(request.getNombre());
-                nuevo.setRutaDataset("dataset/train/" + request.getEmpleadoId());
-                empleadoRepository.save(nuevo);
+            // 2. Decodificar la ráfaga de fotos (De Base64 a Bytes)
+            List<byte[]> fotosDecodificadas = new ArrayList<>();
+            for (String fotoBase64 : request.getFotosBase64()) {
+                String base64Limpio = fotoBase64.split(",")[1];
+                fotosDecodificadas.add(Base64.getDecoder().decode(base64Limpio));
             }
 
-            String base64Image = request.getFotoBase64().split(",")[1];
-            byte[] imageBytes = Base64.getDecoder().decode(base64Image);
+            // 3. Subimos a PocketBase y capturamos la URL generada
+            String urlPocketBase = pocketBaseService.crearRegistroEmpleado(
+                    request.getEmpleadoId(), request.getNombre(), fotosDecodificadas
+            );
 
-            String nombreFoto = carpetaDestinoFinal + "/foto_" + UUID.randomUUID().toString().substring(0, 8) + ".jpg";
-            try (FileOutputStream fos = new FileOutputStream(nombreFoto)) {
-                fos.write(imageBytes);
-            }
+            // 4. Creamos el empleado en PostgreSQL con la URL real
+            Empleado nuevoEmpleado = new Empleado();
+            nuevoEmpleado.setId(request.getEmpleadoId());
+            nuevoEmpleado.setNombre(request.getNombre());
+            nuevoEmpleado.setRutaDataset(urlPocketBase);
 
-            return ResponseEntity.ok("Foto organizada en: " + carpetaDestinoFinal);
+            empleadoRepository.save(nuevoEmpleado);
+
+            return ResponseEntity.ok("Empleado enrolado y fotos blindadas en la nube.");
 
         } catch (Exception e) {
-            return ResponseEntity.status(500).body("Error al organizar el dataset: " + e.getMessage());
+            e.printStackTrace();
+            return ResponseEntity.status(500).body("Error en la transacción: " + e.getMessage());
         }
     }
     // En EmpleadoController.java
@@ -57,17 +64,16 @@ public class EmpleadoController {
     }
 }
 
-// DTO para recibir los datos desde React (ESTO ERA LO QUE FALTABA)
+// DTO Actualizado: Ahora recibe una Lista de fotos en vez de una sola
 class EnrolarRequest {
     private String empleadoId;
     private String nombre;
-    private String fotoBase64;
+    private List<String> fotosBase64; // <--- Cambiado a Lista
 
-    // Getters y Setters
     public String getEmpleadoId() { return empleadoId; }
     public void setEmpleadoId(String empleadoId) { this.empleadoId = empleadoId; }
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }
-    public String getFotoBase64() { return fotoBase64; }
-    public void setFotoBase64(String fotoBase64) { this.fotoBase64 = fotoBase64; }
+    public List<String> getFotosBase64() { return fotosBase64; }
+    public void setFotosBase64(List<String> fotosBase64) { this.fotosBase64 = fotosBase64; }
 }
