@@ -10,8 +10,6 @@ import java.util.Date;
 
 @Component
 public class JwtUtil {
-
-    // Llave secreta
     private final String SECRET_KEY = "ServicioSeguroGenerarTokenSeguro12345";
     private final long EXPIRATION_TIME = 1200000;
 
@@ -31,6 +29,6 @@ public class JwtUtil {
         Jwts.parserBuilder()
                 .setSigningKey(getSigningKey())
                 .build()
-                .parseClaimsJws(token); // Si está vencido (pasaron los 60000ms), esto "explota" y lanza una excepción.
+                .parseClaimsJws(token);
     }
 }

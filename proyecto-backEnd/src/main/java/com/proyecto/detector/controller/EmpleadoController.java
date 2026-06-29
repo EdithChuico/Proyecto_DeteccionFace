@@ -85,14 +85,9 @@ public class EmpleadoController {
             empleado.setNombre(request.getNombre());
             empleado.setEstado(request.getEstado()); // "Activo" o "Inactivo"
 
-            // Si tu ID/Cédula es la clave primaria y necesitas cambiarla,
-            // lo ideal en JPA es guardar un nuevo registro o manejarlo si no es la PK nativa.
-            // Asumiendo que es modificable:
-            // empleado.setId(request.getNuevoId());
-
             empleadoRepository.save(empleado);
 
-            // ✨ REGISTRO DE AUDITORÍA CRÍTICO
+            // REGISTRO DE AUDITORÍA CRÍTICO
             String detalleAccion = String.format("Modificó empleado ID #%s. Antes: [%s] -> Ahora: [Nombre: %s, Estado: %s]",
                     id, datosAnteriores, request.getNombre(), request.getEstado());
 
@@ -135,4 +130,32 @@ class EnrolarRequest {
     public void setNombre(String nombre) { this.nombre = nombre; }
     public List<String> getFotosBase64() { return fotosBase64; }
     public void setFotosBase64(List<String> fotosBase64) { this.fotosBase64 = fotosBase64; }
+}
+class CedulaValidator {
+
+    public static boolean esCedulaValida(String cedula) {
+
+        if (cedula == null || !cedula.matches("\\d{10}")) {
+            return false;
+        }
+        int provincia = Integer.parseInt(cedula.substring(0, 2));
+        if ((provincia < 1 || provincia > 24) && provincia != 30) {
+            return false;
+        }
+        int tercerDigito = Integer.parseInt(cedula.substring(2, 3));
+        if (tercerDigito >= 6) {
+            return false;
+        }
+        int[] coeficientes = {2, 1, 2, 1, 2, 1, 2, 1, 2};
+        int suma = 0;
+        for (int i = 0; i < coeficientes.length; i++) {
+            int valor = Character.getNumericValue(cedula.charAt(i)) * coeficientes[i];
+            // Si el resultado de la multiplicación es mayor a 9, se le resta 9
+            suma += (valor > 9) ? valor - 9 : valor;
+        }
+        // Calculamos el dígito verificador esperado
+        int digitoVerificadorEsperado = (suma % 10 == 0) ? 0 : 10 - (suma % 10);
+        int digitoVerificadorReal = Character.getNumericValue(cedula.charAt(9));
+        return digitoVerificadorEsperado == digitoVerificadorReal;
+    }
 }
