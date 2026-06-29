@@ -30,6 +30,9 @@ public class EmpleadoController {
     @PostMapping("/enrolar")
     public synchronized ResponseEntity<String> registrarEmpleado(@RequestBody EnrolarRequest request) {
         try {
+            if (!CedulaValidator.esCedulaValida(request.getEmpleadoId())) {
+                return ResponseEntity.badRequest().body("Error: El número de cédula ingresado no es válido.");
+            }
             // Verificamos antes de gastar internet subiendo cosas
             if (empleadoRepository.existsById(request.getEmpleadoId())) {
                 return ResponseEntity.badRequest().body("El empleado ya está registrado. Para actualizar sus fotos, debe eliminarlo primero del sistema.");
