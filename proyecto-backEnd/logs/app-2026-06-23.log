@@ -1,0 +1,998 @@
+[2026-06-23T02:16:11.157Z] [INFO] Starting DetectorApplication using Java 21.0.11 with PID 24828 (C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd\target\classes started by Usuario in C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd)
+[2026-06-23T02:16:11.160Z] [INFO] No active profile set, falling back to 1 default profile: "default"
+[2026-06-23T02:16:11.999Z] [INFO] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2026-06-23T02:16:12.097Z] [INFO] Finished Spring Data repository scanning in 86 ms. Found 5 JPA repository interfaces.
+[2026-06-23T02:16:12.706Z] [INFO] Tomcat initialized with port 8080 (http)
+[2026-06-23T02:16:12.723Z] [INFO] Initializing ProtocolHandler ["http-nio-8080"]
+[2026-06-23T02:16:12.725Z] [INFO] Starting service [Tomcat]
+[2026-06-23T02:16:12.725Z] [INFO] Starting Servlet engine: [Apache Tomcat/11.0.21]
+[2026-06-23T02:16:12.799Z] [INFO] Root WebApplicationContext: initialization completed in 1569 ms
+[2026-06-23T02:16:13.027Z] [INFO] HHH008540: Processing PersistenceUnitInfo [name: default]
+[2026-06-23T02:16:13.124Z] [INFO] HHH000001: Hibernate ORM core version 7.2.12.Final
+[2026-06-23T02:16:13.805Z] [INFO] No LoadTimeWeaver setup: ignoring JPA class transformer
+[2026-06-23T02:16:13.854Z] [INFO] HikariPool-1 - Starting...
+[2026-06-23T02:16:15.179Z] [INFO] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7af9595d
+[2026-06-23T02:16:15.184Z] [INFO] HikariPool-1 - Start completed.
+[2026-06-23T02:16:15.353Z] [WARN] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2026-06-23T02:16:15.787Z] [INFO] HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-noisy-pine-apct0js4.c-7.us-east-1.aws.neon.tech:5432/neondb?sslmode=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.10
+	Default catalog/schema: neondb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2026-06-23T02:16:17.218Z] [INFO] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-06-23T02:16:17.683Z] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T02:16:17.783Z] [INFO] Hibernate is in classpath; If applicable, HQL parser will be used.
+[2026-06-23T02:16:18.283Z] [WARN] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2026-06-23T02:16:18.685Z] [INFO] Starting...
+[2026-06-23T02:16:18.686Z] [INFO] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@1902ad0f]]
+[2026-06-23T02:16:18.691Z] [INFO] Started.
+[2026-06-23T02:16:18.692Z] [INFO] Starting ProtocolHandler ["http-nio-8080"]
+[2026-06-23T02:16:18.712Z] [INFO] Tomcat started on port 8080 (http) with context path '/'
+[2026-06-23T02:16:18.718Z] [INFO] Started DetectorApplication in 8.303 seconds (process running for 8.845)
+[2026-06-23T02:16:46.596Z] [INFO] Commencing graceful shutdown. Waiting for active requests to complete
+[2026-06-23T02:16:46.621Z] [INFO] Graceful shutdown complete
+[2026-06-23T02:16:46.624Z] [INFO] Stopping...
+[2026-06-23T02:16:46.624Z] [INFO] BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@1902ad0f]]
+[2026-06-23T02:16:46.624Z] [INFO] Stopped.
+[2026-06-23T02:16:46.625Z] [INFO] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T02:16:46.628Z] [INFO] HikariPool-1 - Shutdown initiated...
+[2026-06-23T02:16:47.622Z] [INFO] HikariPool-1 - Shutdown completed.
+[2026-06-23T02:16:51.805Z] [INFO] Starting DetectorApplication using Java 21.0.11 with PID 4824 (C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd\target\classes started by Usuario in C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd)
+[2026-06-23T02:16:51.808Z] [INFO] No active profile set, falling back to 1 default profile: "default"
+[2026-06-23T02:16:52.494Z] [INFO] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2026-06-23T02:16:52.550Z] [INFO] Finished Spring Data repository scanning in 47 ms. Found 5 JPA repository interfaces.
+[2026-06-23T02:16:53.067Z] [INFO] Tomcat initialized with port 8080 (http)
+[2026-06-23T02:16:53.081Z] [INFO] Initializing ProtocolHandler ["http-nio-8080"]
+[2026-06-23T02:16:53.082Z] [INFO] Starting service [Tomcat]
+[2026-06-23T02:16:53.082Z] [INFO] Starting Servlet engine: [Apache Tomcat/11.0.21]
+[2026-06-23T02:16:53.151Z] [INFO] Root WebApplicationContext: initialization completed in 1280 ms
+[2026-06-23T02:16:53.353Z] [INFO] HHH008540: Processing PersistenceUnitInfo [name: default]
+[2026-06-23T02:16:53.408Z] [INFO] HHH000001: Hibernate ORM core version 7.2.12.Final
+[2026-06-23T02:16:53.855Z] [INFO] No LoadTimeWeaver setup: ignoring JPA class transformer
+[2026-06-23T02:16:53.887Z] [INFO] HikariPool-1 - Starting...
+[2026-06-23T02:16:55.181Z] [INFO] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@70840a5a
+[2026-06-23T02:16:55.182Z] [INFO] HikariPool-1 - Start completed.
+[2026-06-23T02:16:55.325Z] [WARN] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2026-06-23T02:16:55.791Z] [INFO] HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-noisy-pine-apct0js4.c-7.us-east-1.aws.neon.tech:5432/neondb?sslmode=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.10
+	Default catalog/schema: neondb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2026-06-23T02:16:56.979Z] [INFO] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-06-23T02:16:57.485Z] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T02:16:57.575Z] [INFO] Hibernate is in classpath; If applicable, HQL parser will be used.
+[2026-06-23T02:16:58.096Z] [WARN] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2026-06-23T02:16:58.447Z] [INFO] Starting...
+[2026-06-23T02:16:58.448Z] [INFO] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@63bb52ea]]
+[2026-06-23T02:16:58.449Z] [INFO] Started.
+[2026-06-23T02:16:58.450Z] [INFO] Starting ProtocolHandler ["http-nio-8080"]
+[2026-06-23T02:16:58.472Z] [INFO] Tomcat started on port 8080 (http) with context path '/'
+[2026-06-23T02:16:58.479Z] [INFO] Started DetectorApplication in 7.234 seconds (process running for 7.721)
+[2026-06-23T02:17:19.756Z] [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2026-06-23T02:17:19.756Z] [INFO] Initializing Servlet 'dispatcherServlet'
+[2026-06-23T02:17:19.758Z] [INFO] Completed initialization in 2 ms
+[2026-06-23T02:17:58.452Z] [INFO] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+[2026-06-23T02:31:26.258Z] [INFO] POST /login - Intento de inicio de sesión para: fcjimenez@espe.edu.ec
+[2026-06-23T02:31:26.258Z] [INFO] POST /login - Inicio de sesión exitoso
+[2026-06-23T02:47:58.455Z] [INFO] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 2, active threads = 1, queued tasks = 0, completed tasks = 1]
+[2026-06-23T03:17:58.461Z] [INFO] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 3, active threads = 1, queued tasks = 0, completed tasks = 2]
+[2026-06-23T03:47:58.472Z] [INFO] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 4, active threads = 1, queued tasks = 0, completed tasks = 3]
+[2026-06-23T04:17:58.482Z] [INFO] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 5, active threads = 1, queued tasks = 0, completed tasks = 4]
+[2026-06-23T04:47:58.494Z] [INFO] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 6, active threads = 1, queued tasks = 0, completed tasks = 5]
+[2026-06-23T05:17:58.505Z] [INFO] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 7, active threads = 1, queued tasks = 0, completed tasks = 6]
+[2026-06-23T05:19:29.391Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@45e4aa44 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T05:47:58.523Z] [INFO] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 8, active threads = 1, queued tasks = 0, completed tasks = 7]
+[2026-06-23T06:01:00.822Z] [INFO] Commencing graceful shutdown. Waiting for active requests to complete
+[2026-06-23T06:01:00.884Z] [INFO] Graceful shutdown complete
+[2026-06-23T06:01:00.929Z] [INFO] Stopping...
+[2026-06-23T06:01:00.931Z] [INFO] BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@63bb52ea]]
+[2026-06-23T06:01:00.931Z] [INFO] Stopped.
+[2026-06-23T06:01:00.977Z] [INFO] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T06:01:01.054Z] [INFO] HikariPool-1 - Shutdown initiated...
+[2026-06-23T06:01:02.120Z] [INFO] HikariPool-1 - Shutdown completed.
+[2026-06-23T06:56:27.229Z] [INFO] Starting DetectorApplication using Java 21.0.11 with PID 3976 (C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd\target\classes started by Usuario in C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd)
+[2026-06-23T06:56:27.232Z] [INFO] No active profile set, falling back to 1 default profile: "default"
+[2026-06-23T06:56:28.508Z] [INFO] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2026-06-23T06:56:28.681Z] [INFO] Finished Spring Data repository scanning in 150 ms. Found 5 JPA repository interfaces.
+[2026-06-23T06:56:30.337Z] [INFO] Tomcat initialized with port 8080 (http)
+[2026-06-23T06:56:30.377Z] [INFO] Initializing ProtocolHandler ["http-nio-8080"]
+[2026-06-23T06:56:30.382Z] [INFO] Starting service [Tomcat]
+[2026-06-23T06:56:30.383Z] [INFO] Starting Servlet engine: [Apache Tomcat/11.0.21]
+[2026-06-23T06:56:30.607Z] [INFO] Root WebApplicationContext: initialization completed in 3289 ms
+[2026-06-23T06:56:31.104Z] [INFO] HHH008540: Processing PersistenceUnitInfo [name: default]
+[2026-06-23T06:56:31.315Z] [INFO] HHH000001: Hibernate ORM core version 7.2.12.Final
+[2026-06-23T06:56:32.814Z] [INFO] No LoadTimeWeaver setup: ignoring JPA class transformer
+[2026-06-23T06:56:32.911Z] [INFO] HikariPool-1 - Starting...
+[2026-06-23T06:56:35.428Z] [INFO] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@e1a150c
+[2026-06-23T06:56:35.434Z] [INFO] HikariPool-1 - Start completed.
+[2026-06-23T06:56:35.726Z] [WARN] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2026-06-23T06:56:36.188Z] [INFO] HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-noisy-pine-apct0js4.c-7.us-east-1.aws.neon.tech:5432/neondb?sslmode=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.10
+	Default catalog/schema: neondb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2026-06-23T06:56:39.144Z] [INFO] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-06-23T06:56:40.375Z] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T06:56:40.600Z] [INFO] Hibernate is in classpath; If applicable, HQL parser will be used.
+[2026-06-23T06:56:41.628Z] [WARN] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2026-06-23T06:56:42.435Z] [INFO] Starting...
+[2026-06-23T06:56:42.437Z] [INFO] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@87276c4]]
+[2026-06-23T06:56:42.438Z] [INFO] Started.
+[2026-06-23T06:56:42.439Z] [INFO] Starting ProtocolHandler ["http-nio-8080"]
+[2026-06-23T06:56:42.487Z] [INFO] Tomcat started on port 8080 (http) with context path '/'
+[2026-06-23T06:56:42.502Z] [INFO] Started DetectorApplication in 16.221 seconds (process running for 17.206)
+[2026-06-23T06:56:42.666Z] [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2026-06-23T06:56:42.667Z] [INFO] Initializing Servlet 'dispatcherServlet'
+[2026-06-23T06:56:42.671Z] [INFO] Completed initialization in 3 ms
+[2026-06-23T06:56:52.845Z] [INFO] A cookie header was received [g_state={"i_l":0,"i_ll":1782199862523,"i_e":{"enable_itp_optimization":24},"i_et":1782199862523,"i_b":"9Jj5NhIMrupsr3XhV4i6MCAZW6I8yO+yJuhGoT6ms1c"}] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+[2026-06-23T06:57:42.444Z] [INFO] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+[2026-06-23T06:58:26.312Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@e1a150c (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T06:58:31.849Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@7ba77bda (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T06:58:36.333Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@11ab92e5 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T06:58:41.867Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@3a9a71e1 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T06:58:42.771Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@26ab0aef (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T06:58:42.771Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@4b09753d (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T06:58:42.771Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@beaae14 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T06:58:42.772Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@70fe0b3e (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T06:58:42.774Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@6defc8f2 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T06:58:42.774Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@2d2fb510 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T06:58:46.294Z] [WARN] HHH000247: ErrorCode: 0, SQLState: 08003
+[2026-06-23T06:58:46.295Z] [WARN] HikariPool-1 - Connection is not available, request timed out after 30006ms (total=0, active=0, idle=0, waiting=2)
+[2026-06-23T06:58:46.295Z] [WARN] HHH000247: ErrorCode: 0, SQLState: 08003
+[2026-06-23T06:58:46.296Z] [WARN] HikariPool-1 - Connection is not available, request timed out after 30006ms (total=0, active=0, idle=0, waiting=2)
+[2026-06-23T06:58:46.315Z] [ERROR] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.transaction.CannotCreateTransactionException: Could not open JPA EntityManager for transaction] with root cause
+org.postgresql.util.PSQLException: This connection has been closed.
+	at org.postgresql.jdbc.PgConnection.checkClosed(PgConnection.java:1026)
+	at org.postgresql.jdbc.PgConnection.setNetworkTimeout(PgConnection.java:1771)
+	at com.zaxxer.hikari.pool.PoolBase.setNetworkTimeout(PoolBase.java:585)
+	at com.zaxxer.hikari.pool.PoolBase.isConnectionDead(PoolBase.java:177)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:166)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:142)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:127)
+	at org.hibernate.engine.jdbc.connections.internal.DataSourceConnectionProvider.getConnection(DataSourceConnectionProvider.java:137)
+	at org.hibernate.internal.NonContextualJdbcConnectionAccess.obtainConnection(NonContextualJdbcConnectionAccess.java:47)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquire(LogicalConnectionManagedImpl.java:187)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:87)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getPhysicalConnection(LogicalConnectionManagedImpl.java:126)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.beginTransaction(HibernateJpaDialect.java:135)
+	at org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:411)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.startTransaction(AbstractPlatformTransactionManager.java:532)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:405)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.createTransactionIfNecessary(TransactionAspectSupport.java:628)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:365)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:130)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:135)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:166)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:222)
+	at jdk.proxy2/jdk.proxy2.$Proxy131.existsById(Unknown Source)
+	at com.proyecto.detector.controller.EmpleadoController.registrarEmpleado(EmpleadoController.java:34)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2026-06-23T06:59:05.350Z] [WARN] HHH000247: ErrorCode: 0, SQLState: 08001
+[2026-06-23T06:59:05.351Z] [WARN] HikariPool-1 - Connection is not available, request timed out after 30014ms (total=0, active=0, idle=0, waiting=4)
+[2026-06-23T06:59:05.351Z] [WARN] HHH000247: ErrorCode: 0, SQLState: 08001
+[2026-06-23T06:59:05.351Z] [WARN] HikariPool-1 - Connection is not available, request timed out after 30014ms (total=0, active=0, idle=0, waiting=4)
+[2026-06-23T07:01:15.478Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@3349e45f (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T07:03:42.651Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@a1ef37a (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T07:03:42.688Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@284d0beb (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T07:03:42.719Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@5efb30b2 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T07:03:42.744Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@23039d34 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T07:03:42.745Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@246f1c19 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T07:03:42.762Z] [WARN] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=57s50ms741µs200ns).
+[2026-06-23T07:03:42.763Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@643d492c (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T07:03:43.696Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@2e76e9c7 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T07:03:43.701Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@912c755 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T07:03:43.711Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@265f64c9 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T07:03:43.712Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@78af5a14 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T07:20:08.946Z] [INFO] Commencing graceful shutdown. Waiting for active requests to complete
+[2026-06-23T07:20:09.008Z] [INFO] Graceful shutdown complete
+[2026-06-23T07:20:09.016Z] [INFO] Stopping...
+[2026-06-23T07:20:09.016Z] [INFO] BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@87276c4]]
+[2026-06-23T07:20:09.016Z] [INFO] Stopped.
+[2026-06-23T07:20:09.020Z] [INFO] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T07:20:09.027Z] [INFO] HikariPool-1 - Shutdown initiated...
+[2026-06-23T07:20:10.043Z] [INFO] HikariPool-1 - Shutdown completed.
+[2026-06-23T07:20:13.465Z] [INFO] Starting DetectorApplication using Java 21.0.11 with PID 22440 (C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd\target\classes started by Usuario in C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd)
+[2026-06-23T07:20:13.470Z] [INFO] No active profile set, falling back to 1 default profile: "default"
+[2026-06-23T07:20:14.584Z] [INFO] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2026-06-23T07:20:14.716Z] [INFO] Finished Spring Data repository scanning in 112 ms. Found 5 JPA repository interfaces.
+[2026-06-23T07:20:15.967Z] [INFO] Tomcat initialized with port 8080 (http)
+[2026-06-23T07:20:16.002Z] [INFO] Initializing ProtocolHandler ["http-nio-8080"]
+[2026-06-23T07:20:16.006Z] [INFO] Starting service [Tomcat]
+[2026-06-23T07:20:16.007Z] [INFO] Starting Servlet engine: [Apache Tomcat/11.0.21]
+[2026-06-23T07:20:16.229Z] [INFO] Root WebApplicationContext: initialization completed in 2691 ms
+[2026-06-23T07:20:16.715Z] [INFO] HHH008540: Processing PersistenceUnitInfo [name: default]
+[2026-06-23T07:20:16.994Z] [INFO] HHH000001: Hibernate ORM core version 7.2.12.Final
+[2026-06-23T07:20:18.369Z] [INFO] No LoadTimeWeaver setup: ignoring JPA class transformer
+[2026-06-23T07:20:18.480Z] [INFO] HikariPool-1 - Starting...
+[2026-06-23T07:20:20.329Z] [INFO] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@70840a5a
+[2026-06-23T07:20:20.333Z] [INFO] HikariPool-1 - Start completed.
+[2026-06-23T07:20:20.862Z] [WARN] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2026-06-23T07:20:21.301Z] [INFO] HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-noisy-pine-apct0js4.c-7.us-east-1.aws.neon.tech:5432/neondb?sslmode=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.10
+	Default catalog/schema: neondb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2026-06-23T07:20:24.118Z] [INFO] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-06-23T07:20:24.647Z] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T07:20:24.827Z] [INFO] Hibernate is in classpath; If applicable, HQL parser will be used.
+[2026-06-23T07:20:25.780Z] [WARN] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2026-06-23T07:20:26.490Z] [INFO] Starting...
+[2026-06-23T07:20:26.491Z] [INFO] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@63bb52ea]]
+[2026-06-23T07:20:26.492Z] [INFO] Started.
+[2026-06-23T07:20:26.493Z] [INFO] Starting ProtocolHandler ["http-nio-8080"]
+[2026-06-23T07:20:26.527Z] [INFO] Tomcat started on port 8080 (http) with context path '/'
+[2026-06-23T07:20:26.538Z] [INFO] Started DetectorApplication in 13.841 seconds (process running for 14.456)
+[2026-06-23T07:20:43.021Z] [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2026-06-23T07:20:43.022Z] [INFO] Initializing Servlet 'dispatcherServlet'
+[2026-06-23T07:20:43.038Z] [INFO] Completed initialization in 16 ms
+[2026-06-23T07:20:43.300Z] [INFO] POST /login - Intento de inicio de sesión para: fcjimenez@espe.edu.ec
+[2026-06-23T07:20:43.300Z] [INFO] POST /login - Inicio de sesión exitoso
+[2026-06-23T07:20:50.657Z] [INFO] POST /login - Intento de inicio de sesión para: fcjimenez@espe.edu.ec
+[2026-06-23T07:20:50.657Z] [INFO] POST /login - Inicio de sesión exitoso
+[2026-06-23T07:21:01.374Z] [INFO] POST /login - Intento de inicio de sesión para: fcjimenez@espe.edu.ec
+[2026-06-23T07:21:01.374Z] [INFO] POST /login - Inicio de sesión exitoso
+[2026-06-23T07:21:26.494Z] [INFO] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+[2026-06-23T07:21:52.337Z] [INFO] A cookie header was received [g_state={"i_l":0,"i_ll":1782217228202,"i_e":{"enable_itp_optimization":24},"i_et":1782217228202,"i_b":"w9g1xyHThkNjpGkcP4vCzQHD5mGKb0yteQY3MLvlCcc"}] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+[2026-06-23T07:21:52.350Z] [WARN] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+[2026-06-23T07:42:28.484Z] [INFO] Commencing graceful shutdown. Waiting for active requests to complete
+[2026-06-23T07:42:28.542Z] [INFO] Graceful shutdown complete
+[2026-06-23T07:42:28.545Z] [INFO] Stopping...
+[2026-06-23T07:42:28.546Z] [INFO] BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@63bb52ea]]
+[2026-06-23T07:42:28.546Z] [INFO] Stopped.
+[2026-06-23T07:42:28.548Z] [INFO] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T07:42:28.551Z] [INFO] HikariPool-1 - Shutdown initiated...
+[2026-06-23T07:42:29.900Z] [INFO] HikariPool-1 - Shutdown completed.
+[2026-06-23T08:39:45.266Z] [INFO] Starting DetectorApplication using Java 21.0.11 with PID 30436 (C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd\target\classes started by Usuario in C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd)
+[2026-06-23T08:39:45.269Z] [INFO] No active profile set, falling back to 1 default profile: "default"
+[2026-06-23T08:39:46.365Z] [INFO] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2026-06-23T08:39:46.550Z] [INFO] Finished Spring Data repository scanning in 162 ms. Found 5 JPA repository interfaces.
+[2026-06-23T08:39:47.576Z] [INFO] Tomcat initialized with port 8080 (http)
+[2026-06-23T08:39:47.599Z] [INFO] Initializing ProtocolHandler ["http-nio-8080"]
+[2026-06-23T08:39:47.601Z] [INFO] Starting service [Tomcat]
+[2026-06-23T08:39:47.601Z] [INFO] Starting Servlet engine: [Apache Tomcat/11.0.21]
+[2026-06-23T08:39:47.732Z] [INFO] Root WebApplicationContext: initialization completed in 2402 ms
+[2026-06-23T08:39:48.132Z] [INFO] HHH008540: Processing PersistenceUnitInfo [name: default]
+[2026-06-23T08:39:48.342Z] [INFO] HHH000001: Hibernate ORM core version 7.2.12.Final
+[2026-06-23T08:39:50.032Z] [INFO] No LoadTimeWeaver setup: ignoring JPA class transformer
+[2026-06-23T08:39:50.125Z] [INFO] HikariPool-1 - Starting...
+[2026-06-23T08:39:52.942Z] [INFO] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@70840a5a
+[2026-06-23T08:39:52.946Z] [INFO] HikariPool-1 - Start completed.
+[2026-06-23T08:39:53.431Z] [WARN] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2026-06-23T08:39:53.945Z] [INFO] HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-noisy-pine-apct0js4.c-7.us-east-1.aws.neon.tech:5432/neondb?sslmode=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.10
+	Default catalog/schema: neondb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2026-06-23T08:39:56.714Z] [INFO] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-06-23T08:39:57.576Z] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T08:39:57.764Z] [INFO] Hibernate is in classpath; If applicable, HQL parser will be used.
+[2026-06-23T08:39:58.755Z] [WARN] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2026-06-23T08:39:59.508Z] [INFO] Starting...
+[2026-06-23T08:39:59.510Z] [INFO] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@63bb52ea]]
+[2026-06-23T08:39:59.511Z] [INFO] Started.
+[2026-06-23T08:39:59.512Z] [INFO] Starting ProtocolHandler ["http-nio-8080"]
+[2026-06-23T08:39:59.551Z] [INFO] Tomcat started on port 8080 (http) with context path '/'
+[2026-06-23T08:39:59.563Z] [INFO] Started DetectorApplication in 15.101 seconds (process running for 15.809)
+[2026-06-23T08:40:59.516Z] [INFO] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+[2026-06-23T08:41:27.313Z] [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2026-06-23T08:41:27.314Z] [INFO] Initializing Servlet 'dispatcherServlet'
+[2026-06-23T08:41:27.318Z] [INFO] Completed initialization in 4 ms
+[2026-06-23T08:41:39.137Z] [INFO] Commencing graceful shutdown. Waiting for active requests to complete
+[2026-06-23T08:41:39.191Z] [INFO] Graceful shutdown complete
+[2026-06-23T08:41:39.194Z] [INFO] Stopping...
+[2026-06-23T08:41:39.194Z] [INFO] BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@63bb52ea]]
+[2026-06-23T08:41:39.194Z] [INFO] Stopped.
+[2026-06-23T08:41:39.196Z] [INFO] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T08:41:39.201Z] [INFO] HikariPool-1 - Shutdown initiated...
+[2026-06-23T08:41:41.243Z] [INFO] HikariPool-1 - Shutdown completed.
+[2026-06-23T08:41:47.138Z] [INFO] Starting DetectorApplication using Java 21.0.11 with PID 19720 (C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd\target\classes started by Usuario in C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd)
+[2026-06-23T08:41:47.145Z] [INFO] No active profile set, falling back to 1 default profile: "default"
+[2026-06-23T08:41:48.164Z] [INFO] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2026-06-23T08:41:48.257Z] [INFO] Finished Spring Data repository scanning in 79 ms. Found 5 JPA repository interfaces.
+[2026-06-23T08:41:49.166Z] [INFO] Tomcat initialized with port 8080 (http)
+[2026-06-23T08:41:49.181Z] [INFO] Initializing ProtocolHandler ["http-nio-8080"]
+[2026-06-23T08:41:49.183Z] [INFO] Starting service [Tomcat]
+[2026-06-23T08:41:49.183Z] [INFO] Starting Servlet engine: [Apache Tomcat/11.0.21]
+[2026-06-23T08:41:49.267Z] [INFO] Root WebApplicationContext: initialization completed in 2051 ms
+[2026-06-23T08:41:49.464Z] [INFO] HHH008540: Processing PersistenceUnitInfo [name: default]
+[2026-06-23T08:41:49.522Z] [INFO] HHH000001: Hibernate ORM core version 7.2.12.Final
+[2026-06-23T08:41:50.292Z] [INFO] No LoadTimeWeaver setup: ignoring JPA class transformer
+[2026-06-23T08:41:50.343Z] [INFO] HikariPool-1 - Starting...
+[2026-06-23T08:41:52.298Z] [INFO] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@e1a150c
+[2026-06-23T08:41:52.302Z] [INFO] HikariPool-1 - Start completed.
+[2026-06-23T08:41:52.548Z] [WARN] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2026-06-23T08:41:53.025Z] [INFO] HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-noisy-pine-apct0js4.c-7.us-east-1.aws.neon.tech:5432/neondb?sslmode=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.10
+	Default catalog/schema: neondb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2026-06-23T08:41:54.953Z] [INFO] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-06-23T08:42:46.472Z] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T08:42:46.600Z] [INFO] Hibernate is in classpath; If applicable, HQL parser will be used.
+[2026-06-23T08:42:47.356Z] [WARN] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2026-06-23T08:42:48.143Z] [INFO] Starting...
+[2026-06-23T08:42:48.144Z] [INFO] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@2eb27091]]
+[2026-06-23T08:42:48.146Z] [INFO] Started.
+[2026-06-23T08:42:48.146Z] [INFO] Starting ProtocolHandler ["http-nio-8080"]
+[2026-06-23T08:42:48.184Z] [INFO] Tomcat started on port 8080 (http) with context path '/'
+[2026-06-23T08:42:48.196Z] [INFO] Started DetectorApplication in 61.703 seconds (process running for 62.225)
+[2026-06-23T08:43:11.554Z] [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2026-06-23T08:43:11.554Z] [INFO] Initializing Servlet 'dispatcherServlet'
+[2026-06-23T08:43:11.557Z] [INFO] Completed initialization in 3 ms
+[2026-06-23T08:43:11.811Z] [INFO] POST /login - Intento de inicio de sesión para: fcjimenez@espe.edu.ec
+[2026-06-23T08:43:11.811Z] [INFO] POST /login - Inicio de sesión exitoso
+[2026-06-23T08:43:48.143Z] [INFO] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+[2026-06-23T08:55:07.633Z] [INFO] Commencing graceful shutdown. Waiting for active requests to complete
+[2026-06-23T08:55:07.660Z] [INFO] Graceful shutdown complete
+[2026-06-23T08:55:07.665Z] [INFO] Stopping...
+[2026-06-23T08:55:07.665Z] [INFO] BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@2eb27091]]
+[2026-06-23T08:55:07.665Z] [INFO] Stopped.
+[2026-06-23T08:55:07.667Z] [INFO] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T08:55:07.669Z] [INFO] HikariPool-1 - Shutdown initiated...
+[2026-06-23T08:55:09.566Z] [INFO] HikariPool-1 - Shutdown completed.
+[2026-06-23T08:55:16.488Z] [INFO] Starting DetectorApplication using Java 21.0.11 with PID 33632 (C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd\target\classes started by Usuario in C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd)
+[2026-06-23T08:55:16.491Z] [INFO] No active profile set, falling back to 1 default profile: "default"
+[2026-06-23T08:55:17.500Z] [INFO] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2026-06-23T08:55:17.590Z] [INFO] Finished Spring Data repository scanning in 78 ms. Found 5 JPA repository interfaces.
+[2026-06-23T08:55:18.756Z] [INFO] Tomcat initialized with port 8080 (http)
+[2026-06-23T08:55:18.788Z] [INFO] Initializing ProtocolHandler ["http-nio-8080"]
+[2026-06-23T08:55:18.791Z] [INFO] Starting service [Tomcat]
+[2026-06-23T08:55:18.792Z] [INFO] Starting Servlet engine: [Apache Tomcat/11.0.21]
+[2026-06-23T08:55:19.029Z] [INFO] Root WebApplicationContext: initialization completed in 2480 ms
+[2026-06-23T08:55:19.500Z] [INFO] HHH008540: Processing PersistenceUnitInfo [name: default]
+[2026-06-23T08:55:19.747Z] [INFO] HHH000001: Hibernate ORM core version 7.2.12.Final
+[2026-06-23T08:55:21.306Z] [INFO] No LoadTimeWeaver setup: ignoring JPA class transformer
+[2026-06-23T08:55:21.433Z] [INFO] HikariPool-1 - Starting...
+[2026-06-23T08:55:23.416Z] [INFO] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@54ca9420
+[2026-06-23T08:55:23.420Z] [INFO] HikariPool-1 - Start completed.
+[2026-06-23T08:55:23.610Z] [WARN] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2026-06-23T08:55:24.068Z] [INFO] HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-noisy-pine-apct0js4.c-7.us-east-1.aws.neon.tech:5432/neondb?sslmode=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.10
+	Default catalog/schema: neondb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2026-06-23T08:55:27.174Z] [INFO] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-06-23T08:55:27.729Z] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T08:55:27.895Z] [INFO] Hibernate is in classpath; If applicable, HQL parser will be used.
+[2026-06-23T08:55:28.729Z] [WARN] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2026-06-23T08:55:29.342Z] [INFO] Starting...
+[2026-06-23T08:55:29.345Z] [INFO] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@c925ae1]]
+[2026-06-23T08:55:29.346Z] [INFO] Started.
+[2026-06-23T08:55:29.347Z] [INFO] Starting ProtocolHandler ["http-nio-8080"]
+[2026-06-23T08:55:29.383Z] [INFO] Tomcat started on port 8080 (http) with context path '/'
+[2026-06-23T08:55:29.394Z] [INFO] Started DetectorApplication in 13.574 seconds (process running for 14.206)
+[2026-06-23T08:56:29.349Z] [INFO] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+[2026-06-23T09:08:12.038Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@1827433a (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T09:08:12.040Z] [WARN] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m18s404ms882µs900ns).
+[2026-06-23T09:08:12.043Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@4c3b0cfc (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T09:08:12.045Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@633f2d01 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T09:08:12.048Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@750994ae (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T09:08:12.050Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@2619fdba (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T09:08:12.053Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@54ca9420 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T09:08:12.057Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@32d14969 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T09:08:12.060Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@289c2d17 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T09:08:12.062Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@1109704e (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T09:08:12.065Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@7814bbf8 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T09:09:34.616Z] [INFO] Commencing graceful shutdown. Waiting for active requests to complete
+[2026-06-23T09:09:34.641Z] [INFO] Graceful shutdown complete
+[2026-06-23T09:09:34.644Z] [INFO] Stopping...
+[2026-06-23T09:09:34.645Z] [INFO] BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@c925ae1]]
+[2026-06-23T09:09:34.645Z] [INFO] Stopped.
+[2026-06-23T09:09:34.647Z] [INFO] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T09:09:34.650Z] [INFO] HikariPool-1 - Shutdown initiated...
+[2026-06-23T09:09:35.631Z] [INFO] HikariPool-1 - Shutdown completed.
+[2026-06-23T09:09:39.985Z] [INFO] Starting DetectorApplication using Java 21.0.11 with PID 14912 (C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd\target\classes started by Usuario in C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd)
+[2026-06-23T09:09:39.988Z] [INFO] No active profile set, falling back to 1 default profile: "default"
+[2026-06-23T09:09:40.892Z] [INFO] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2026-06-23T09:09:40.991Z] [INFO] Finished Spring Data repository scanning in 74 ms. Found 5 JPA repository interfaces.
+[2026-06-23T09:09:41.877Z] [INFO] Tomcat initialized with port 8080 (http)
+[2026-06-23T09:09:41.905Z] [INFO] Initializing ProtocolHandler ["http-nio-8080"]
+[2026-06-23T09:09:41.909Z] [INFO] Starting service [Tomcat]
+[2026-06-23T09:09:41.910Z] [INFO] Starting Servlet engine: [Apache Tomcat/11.0.21]
+[2026-06-23T09:09:42.052Z] [INFO] Root WebApplicationContext: initialization completed in 2007 ms
+[2026-06-23T09:09:42.494Z] [INFO] HHH008540: Processing PersistenceUnitInfo [name: default]
+[2026-06-23T09:09:42.608Z] [INFO] HHH000001: Hibernate ORM core version 7.2.12.Final
+[2026-06-23T09:09:43.802Z] [INFO] No LoadTimeWeaver setup: ignoring JPA class transformer
+[2026-06-23T09:09:43.895Z] [INFO] HikariPool-1 - Starting...
+[2026-06-23T09:09:45.715Z] [INFO] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@54ca9420
+[2026-06-23T09:09:45.719Z] [INFO] HikariPool-1 - Start completed.
+[2026-06-23T09:09:45.929Z] [WARN] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2026-06-23T09:09:46.370Z] [INFO] HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-noisy-pine-apct0js4.c-7.us-east-1.aws.neon.tech:5432/neondb?sslmode=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.10
+	Default catalog/schema: neondb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2026-06-23T09:09:48.419Z] [INFO] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-06-23T09:09:49.033Z] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T09:09:49.198Z] [INFO] Hibernate is in classpath; If applicable, HQL parser will be used.
+[2026-06-23T09:09:50.006Z] [WARN] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2026-06-23T09:09:50.616Z] [INFO] Starting...
+[2026-06-23T09:09:50.618Z] [INFO] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@31fc1b6e]]
+[2026-06-23T09:09:50.619Z] [INFO] Started.
+[2026-06-23T09:09:50.620Z] [INFO] Starting ProtocolHandler ["http-nio-8080"]
+[2026-06-23T09:09:50.653Z] [INFO] Tomcat started on port 8080 (http) with context path '/'
+[2026-06-23T09:09:50.665Z] [INFO] Started DetectorApplication in 11.284 seconds (process running for 11.767)
+[2026-06-23T09:10:39.753Z] [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2026-06-23T09:10:39.754Z] [INFO] Initializing Servlet 'dispatcherServlet'
+[2026-06-23T09:10:39.758Z] [INFO] Completed initialization in 3 ms
+[2026-06-23T09:10:40.028Z] [INFO] POST /login - Intento de inicio de sesión para: fcjimenez@espe.edu.ec
+[2026-06-23T09:10:40.028Z] [INFO] POST /login - Inicio de sesión exitoso
+[2026-06-23T09:10:50.629Z] [INFO] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+[2026-06-23T09:15:10.651Z] [INFO] POST /login - Intento de inicio de sesión para: fcjimenez@espe.edu.ec
+[2026-06-23T09:15:10.651Z] [INFO] POST /login - Inicio de sesión exitoso
+[2026-06-23T09:24:55.894Z] [INFO] Commencing graceful shutdown. Waiting for active requests to complete
+[2026-06-23T09:24:55.921Z] [INFO] Graceful shutdown complete
+[2026-06-23T09:24:55.926Z] [INFO] Stopping...
+[2026-06-23T09:24:55.926Z] [INFO] BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@31fc1b6e]]
+[2026-06-23T09:24:55.926Z] [INFO] Stopped.
+[2026-06-23T09:24:55.928Z] [INFO] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T09:24:55.931Z] [INFO] HikariPool-1 - Shutdown initiated...
+[2026-06-23T09:24:56.937Z] [INFO] HikariPool-1 - Shutdown completed.
+[2026-06-23T09:25:01.723Z] [INFO] Starting DetectorApplication using Java 21.0.11 with PID 12396 (C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd\target\classes started by Usuario in C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd)
+[2026-06-23T09:25:01.726Z] [INFO] No active profile set, falling back to 1 default profile: "default"
+[2026-06-23T09:25:02.604Z] [INFO] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2026-06-23T09:25:02.694Z] [INFO] Finished Spring Data repository scanning in 78 ms. Found 5 JPA repository interfaces.
+[2026-06-23T09:25:03.859Z] [INFO] Tomcat initialized with port 8080 (http)
+[2026-06-23T09:25:03.893Z] [INFO] Initializing ProtocolHandler ["http-nio-8080"]
+[2026-06-23T09:25:03.898Z] [INFO] Starting service [Tomcat]
+[2026-06-23T09:25:03.899Z] [INFO] Starting Servlet engine: [Apache Tomcat/11.0.21]
+[2026-06-23T09:25:04.087Z] [INFO] Root WebApplicationContext: initialization completed in 2301 ms
+[2026-06-23T09:25:04.523Z] [INFO] HHH008540: Processing PersistenceUnitInfo [name: default]
+[2026-06-23T09:25:04.680Z] [INFO] HHH000001: Hibernate ORM core version 7.2.12.Final
+[2026-06-23T09:25:05.845Z] [INFO] No LoadTimeWeaver setup: ignoring JPA class transformer
+[2026-06-23T09:25:05.933Z] [INFO] HikariPool-1 - Starting...
+[2026-06-23T09:25:07.881Z] [INFO] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@990b86b
+[2026-06-23T09:25:07.885Z] [INFO] HikariPool-1 - Start completed.
+[2026-06-23T09:25:08.056Z] [WARN] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2026-06-23T09:25:08.492Z] [INFO] HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-noisy-pine-apct0js4.c-7.us-east-1.aws.neon.tech:5432/neondb?sslmode=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.10
+	Default catalog/schema: neondb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2026-06-23T09:25:10.818Z] [INFO] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-06-23T09:25:11.642Z] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T09:25:11.822Z] [INFO] Hibernate is in classpath; If applicable, HQL parser will be used.
+[2026-06-23T09:25:12.757Z] [WARN] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2026-06-23T09:25:13.513Z] [INFO] Starting...
+[2026-06-23T09:25:13.514Z] [INFO] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@74cd82f1]]
+[2026-06-23T09:25:13.515Z] [INFO] Started.
+[2026-06-23T09:25:13.516Z] [INFO] Starting ProtocolHandler ["http-nio-8080"]
+[2026-06-23T09:25:13.560Z] [INFO] Tomcat started on port 8080 (http) with context path '/'
+[2026-06-23T09:25:13.573Z] [INFO] Started DetectorApplication in 12.584 seconds (process running for 13.108)
+[2026-06-23T09:25:13.825Z] [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2026-06-23T09:25:13.825Z] [INFO] Initializing Servlet 'dispatcherServlet'
+[2026-06-23T09:25:13.829Z] [INFO] Completed initialization in 4 ms
+[2026-06-23T09:26:13.529Z] [INFO] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+[2026-06-23T09:27:19.223Z] [INFO] Commencing graceful shutdown. Waiting for active requests to complete
+[2026-06-23T09:27:19.252Z] [INFO] Graceful shutdown complete
+[2026-06-23T09:27:19.256Z] [INFO] Stopping...
+[2026-06-23T09:27:19.256Z] [INFO] BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@74cd82f1]]
+[2026-06-23T09:27:19.256Z] [INFO] Stopped.
+[2026-06-23T09:27:19.259Z] [INFO] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T09:27:19.264Z] [INFO] HikariPool-1 - Shutdown initiated...
+[2026-06-23T09:27:21.135Z] [INFO] HikariPool-1 - Shutdown completed.
+[2026-06-23T09:27:25.608Z] [INFO] Starting DetectorApplication using Java 21.0.11 with PID 20964 (C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd\target\classes started by Usuario in C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd)
+[2026-06-23T09:27:25.611Z] [INFO] No active profile set, falling back to 1 default profile: "default"
+[2026-06-23T09:27:26.510Z] [INFO] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2026-06-23T09:27:26.635Z] [INFO] Finished Spring Data repository scanning in 110 ms. Found 5 JPA repository interfaces.
+[2026-06-23T09:27:27.419Z] [INFO] Tomcat initialized with port 8080 (http)
+[2026-06-23T09:27:27.437Z] [INFO] Initializing ProtocolHandler ["http-nio-8080"]
+[2026-06-23T09:27:27.439Z] [INFO] Starting service [Tomcat]
+[2026-06-23T09:27:27.440Z] [INFO] Starting Servlet engine: [Apache Tomcat/11.0.21]
+[2026-06-23T09:27:27.637Z] [INFO] Root WebApplicationContext: initialization completed in 1964 ms
+[2026-06-23T09:27:28.006Z] [INFO] HHH008540: Processing PersistenceUnitInfo [name: default]
+[2026-06-23T09:27:28.111Z] [INFO] HHH000001: Hibernate ORM core version 7.2.12.Final
+[2026-06-23T09:27:29.330Z] [INFO] No LoadTimeWeaver setup: ignoring JPA class transformer
+[2026-06-23T09:27:29.422Z] [INFO] HikariPool-1 - Starting...
+[2026-06-23T09:27:30.856Z] [INFO] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@54ca9420
+[2026-06-23T09:27:30.859Z] [INFO] HikariPool-1 - Start completed.
+[2026-06-23T09:27:31.009Z] [WARN] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2026-06-23T09:27:31.434Z] [INFO] HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-noisy-pine-apct0js4.c-7.us-east-1.aws.neon.tech:5432/neondb?sslmode=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.10
+	Default catalog/schema: neondb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2026-06-23T09:27:33.703Z] [INFO] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-06-23T09:27:34.193Z] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T09:27:34.400Z] [INFO] Hibernate is in classpath; If applicable, HQL parser will be used.
+[2026-06-23T09:27:35.302Z] [WARN] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2026-06-23T09:27:36.107Z] [INFO] Starting...
+[2026-06-23T09:27:36.108Z] [INFO] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@c925ae1]]
+[2026-06-23T09:27:36.110Z] [INFO] Started.
+[2026-06-23T09:27:36.111Z] [INFO] Starting ProtocolHandler ["http-nio-8080"]
+[2026-06-23T09:27:36.161Z] [INFO] Tomcat started on port 8080 (http) with context path '/'
+[2026-06-23T09:27:36.173Z] [INFO] Started DetectorApplication in 11.203 seconds (process running for 11.671)
+[2026-06-23T09:27:36.327Z] [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2026-06-23T09:27:36.327Z] [INFO] Initializing Servlet 'dispatcherServlet'
+[2026-06-23T09:27:36.330Z] [INFO] Completed initialization in 3 ms
+[2026-06-23T09:28:36.117Z] [INFO] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+[2026-06-23T09:58:36.126Z] [INFO] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 2, active threads = 1, queued tasks = 0, completed tasks = 1]
+[2026-06-23T10:28:36.129Z] [INFO] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 3, active threads = 1, queued tasks = 0, completed tasks = 2]
+[2026-06-23T10:58:36.145Z] [INFO] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 4, active threads = 1, queued tasks = 0, completed tasks = 3]
+[2026-06-23T10:59:56.924Z] [INFO] Commencing graceful shutdown. Waiting for active requests to complete
+[2026-06-23T10:59:56.969Z] [INFO] Graceful shutdown complete
+[2026-06-23T10:59:56.979Z] [INFO] Stopping...
+[2026-06-23T10:59:56.980Z] [INFO] BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@c925ae1]]
+[2026-06-23T10:59:56.980Z] [INFO] Stopped.
+[2026-06-23T10:59:56.995Z] [INFO] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T10:59:57.020Z] [INFO] HikariPool-1 - Shutdown initiated...
+[2026-06-23T10:59:57.991Z] [INFO] HikariPool-1 - Shutdown completed.
+[2026-06-23T11:29:17.567Z] [INFO] Starting DetectorApplication using Java 21.0.11 with PID 17300 (C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd\target\classes started by Usuario in C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd)
+[2026-06-23T11:29:17.571Z] [INFO] No active profile set, falling back to 1 default profile: "default"
+[2026-06-23T11:29:18.396Z] [INFO] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2026-06-23T11:29:18.475Z] [INFO] Finished Spring Data repository scanning in 68 ms. Found 5 JPA repository interfaces.
+[2026-06-23T11:29:19.240Z] [INFO] Tomcat initialized with port 8080 (http)
+[2026-06-23T11:29:19.256Z] [INFO] Initializing ProtocolHandler ["http-nio-8080"]
+[2026-06-23T11:29:19.257Z] [INFO] Starting service [Tomcat]
+[2026-06-23T11:29:19.258Z] [INFO] Starting Servlet engine: [Apache Tomcat/11.0.21]
+[2026-06-23T11:29:19.343Z] [INFO] Root WebApplicationContext: initialization completed in 1715 ms
+[2026-06-23T11:29:19.559Z] [INFO] HHH008540: Processing PersistenceUnitInfo [name: default]
+[2026-06-23T11:29:19.640Z] [INFO] HHH000001: Hibernate ORM core version 7.2.12.Final
+[2026-06-23T11:29:20.272Z] [INFO] No LoadTimeWeaver setup: ignoring JPA class transformer
+[2026-06-23T11:29:20.322Z] [INFO] HikariPool-1 - Starting...
+[2026-06-23T11:29:22.304Z] [INFO] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@74619273
+[2026-06-23T11:29:22.308Z] [INFO] HikariPool-1 - Start completed.
+[2026-06-23T11:29:22.489Z] [WARN] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2026-06-23T11:29:22.931Z] [INFO] HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-noisy-pine-apct0js4.c-7.us-east-1.aws.neon.tech:5432/neondb?sslmode=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.10
+	Default catalog/schema: neondb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2026-06-23T11:29:24.411Z] [INFO] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-06-23T11:29:24.950Z] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T11:29:25.046Z] [INFO] Hibernate is in classpath; If applicable, HQL parser will be used.
+[2026-06-23T11:29:25.385Z] [WARN] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'asistenciaService': Unsatisfied dependency expressed through field 'messagingTemplate': No qualifying bean of type 'org.springframework.messaging.simp.SimpMessagingTemplate' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+[2026-06-23T11:29:25.386Z] [INFO] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T11:29:25.388Z] [INFO] HikariPool-1 - Shutdown initiated...
+[2026-06-23T11:29:25.882Z] [INFO] HikariPool-1 - Shutdown completed.
+[2026-06-23T11:29:25.886Z] [INFO] Stopping service [Tomcat]
+[2026-06-23T11:29:25.907Z] [INFO] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+[2026-06-23T11:29:25.952Z] [ERROR] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field messagingTemplate in com.proyecto.detector.service.AsistenciaService required a bean of type 'org.springframework.messaging.simp.SimpMessagingTemplate' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.messaging.simp.SimpMessagingTemplate' in your configuration.
+
+[2026-06-23T11:29:37.882Z] [INFO] Starting DetectorApplication using Java 21.0.11 with PID 6436 (C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd\target\classes started by Usuario in C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd)
+[2026-06-23T11:29:37.884Z] [INFO] No active profile set, falling back to 1 default profile: "default"
+[2026-06-23T11:29:38.603Z] [INFO] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2026-06-23T11:29:38.676Z] [INFO] Finished Spring Data repository scanning in 64 ms. Found 5 JPA repository interfaces.
+[2026-06-23T11:29:39.293Z] [INFO] Tomcat initialized with port 8080 (http)
+[2026-06-23T11:29:39.310Z] [INFO] Initializing ProtocolHandler ["http-nio-8080"]
+[2026-06-23T11:29:39.312Z] [INFO] Starting service [Tomcat]
+[2026-06-23T11:29:39.313Z] [INFO] Starting Servlet engine: [Apache Tomcat/11.0.21]
+[2026-06-23T11:29:39.397Z] [INFO] Root WebApplicationContext: initialization completed in 1469 ms
+[2026-06-23T11:29:39.596Z] [INFO] HHH008540: Processing PersistenceUnitInfo [name: default]
+[2026-06-23T11:29:39.662Z] [INFO] HHH000001: Hibernate ORM core version 7.2.12.Final
+[2026-06-23T11:29:40.260Z] [INFO] No LoadTimeWeaver setup: ignoring JPA class transformer
+[2026-06-23T11:29:40.315Z] [INFO] HikariPool-1 - Starting...
+[2026-06-23T11:29:41.546Z] [INFO] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@49925d21
+[2026-06-23T11:29:41.551Z] [INFO] HikariPool-1 - Start completed.
+[2026-06-23T11:29:41.699Z] [WARN] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2026-06-23T11:29:42.127Z] [INFO] HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-noisy-pine-apct0js4.c-7.us-east-1.aws.neon.tech:5432/neondb?sslmode=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.10
+	Default catalog/schema: neondb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2026-06-23T11:29:43.497Z] [INFO] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-06-23T11:29:43.952Z] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T11:29:44.047Z] [INFO] Hibernate is in classpath; If applicable, HQL parser will be used.
+[2026-06-23T11:29:44.315Z] [WARN] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'asistenciaService': Unsatisfied dependency expressed through field 'messagingTemplate': No qualifying bean of type 'org.springframework.messaging.simp.SimpMessagingTemplate' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+[2026-06-23T11:29:44.316Z] [INFO] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T11:29:44.321Z] [INFO] HikariPool-1 - Shutdown initiated...
+[2026-06-23T11:29:44.810Z] [INFO] HikariPool-1 - Shutdown completed.
+[2026-06-23T11:29:44.813Z] [INFO] Stopping service [Tomcat]
+[2026-06-23T11:29:44.825Z] [INFO] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+[2026-06-23T11:29:44.845Z] [ERROR] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field messagingTemplate in com.proyecto.detector.service.AsistenciaService required a bean of type 'org.springframework.messaging.simp.SimpMessagingTemplate' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.messaging.simp.SimpMessagingTemplate' in your configuration.
+
+[2026-06-23T11:31:19.210Z] [INFO] Starting DetectorApplication using Java 21.0.11 with PID 25324 (C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd\target\classes started by Usuario in C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd)
+[2026-06-23T11:31:19.213Z] [INFO] No active profile set, falling back to 1 default profile: "default"
+[2026-06-23T11:31:19.986Z] [INFO] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2026-06-23T11:31:20.081Z] [INFO] Finished Spring Data repository scanning in 86 ms. Found 5 JPA repository interfaces.
+[2026-06-23T11:31:20.686Z] [INFO] Tomcat initialized with port 8080 (http)
+[2026-06-23T11:31:20.710Z] [INFO] Initializing ProtocolHandler ["http-nio-8080"]
+[2026-06-23T11:31:20.713Z] [INFO] Starting service [Tomcat]
+[2026-06-23T11:31:20.713Z] [INFO] Starting Servlet engine: [Apache Tomcat/11.0.21]
+[2026-06-23T11:31:20.791Z] [INFO] Root WebApplicationContext: initialization completed in 1530 ms
+[2026-06-23T11:31:20.961Z] [INFO] HHH008540: Processing PersistenceUnitInfo [name: default]
+[2026-06-23T11:31:21.021Z] [INFO] HHH000001: Hibernate ORM core version 7.2.12.Final
+[2026-06-23T11:31:21.663Z] [INFO] No LoadTimeWeaver setup: ignoring JPA class transformer
+[2026-06-23T11:31:21.713Z] [INFO] HikariPool-1 - Starting...
+[2026-06-23T11:31:22.923Z] [INFO] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@29b5e7db
+[2026-06-23T11:31:22.927Z] [INFO] HikariPool-1 - Start completed.
+[2026-06-23T11:31:23.085Z] [WARN] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2026-06-23T11:31:23.502Z] [INFO] HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-noisy-pine-apct0js4.c-7.us-east-1.aws.neon.tech:5432/neondb?sslmode=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.10
+	Default catalog/schema: neondb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2026-06-23T11:31:24.566Z] [INFO] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-06-23T11:31:25.036Z] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T11:31:25.206Z] [INFO] Hibernate is in classpath; If applicable, HQL parser will be used.
+[2026-06-23T11:31:25.657Z] [WARN] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2026-06-23T11:31:26.156Z] [WARN] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'subProtocolWebSocketHandler'
+[2026-06-23T11:31:26.157Z] [INFO] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T11:31:26.159Z] [INFO] HikariPool-1 - Shutdown initiated...
+[2026-06-23T11:31:26.901Z] [INFO] HikariPool-1 - Shutdown completed.
+[2026-06-23T11:31:26.912Z] [INFO] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+[2026-06-23T11:31:26.928Z] [ERROR] Application run failed
+org.springframework.context.ApplicationContextException: Failed to start bean 'subProtocolWebSocketHandler'
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:423)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:409)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:402)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:613)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:379)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:306)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:1013)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at com.proyecto.detector.DetectorApplication.main(DetectorApplication.java:10)
+Caused by: java.lang.IllegalStateException: No handlers
+	at org.springframework.util.Assert.state(Assert.java:80)
+	at org.springframework.web.socket.messaging.SubProtocolWebSocketHandler.start(SubProtocolWebSocketHandler.java:287)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:420)
+	... 15 common frames omitted
+[2026-06-23T11:33:48.301Z] [INFO] Starting DetectorApplication using Java 21.0.11 with PID 20564 (C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd\target\classes started by Usuario in C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd)
+[2026-06-23T11:33:48.304Z] [INFO] No active profile set, falling back to 1 default profile: "default"
+[2026-06-23T11:33:49.050Z] [INFO] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2026-06-23T11:33:49.118Z] [INFO] Finished Spring Data repository scanning in 59 ms. Found 5 JPA repository interfaces.
+[2026-06-23T11:33:49.672Z] [INFO] Tomcat initialized with port 8080 (http)
+[2026-06-23T11:33:49.686Z] [INFO] Initializing ProtocolHandler ["http-nio-8080"]
+[2026-06-23T11:33:49.688Z] [INFO] Starting service [Tomcat]
+[2026-06-23T11:33:49.688Z] [INFO] Starting Servlet engine: [Apache Tomcat/11.0.21]
+[2026-06-23T11:33:49.746Z] [INFO] Root WebApplicationContext: initialization completed in 1379 ms
+[2026-06-23T11:33:49.980Z] [INFO] HHH008540: Processing PersistenceUnitInfo [name: default]
+[2026-06-23T11:33:50.067Z] [INFO] HHH000001: Hibernate ORM core version 7.2.12.Final
+[2026-06-23T11:33:50.626Z] [INFO] No LoadTimeWeaver setup: ignoring JPA class transformer
+[2026-06-23T11:33:50.673Z] [INFO] HikariPool-1 - Starting...
+[2026-06-23T11:33:51.925Z] [INFO] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4dd4965a
+[2026-06-23T11:33:51.927Z] [INFO] HikariPool-1 - Start completed.
+[2026-06-23T11:33:52.064Z] [WARN] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2026-06-23T11:33:52.484Z] [INFO] HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-noisy-pine-apct0js4.c-7.us-east-1.aws.neon.tech:5432/neondb?sslmode=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.10
+	Default catalog/schema: neondb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2026-06-23T11:33:53.622Z] [INFO] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-06-23T11:33:54.100Z] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T11:33:54.223Z] [INFO] Hibernate is in classpath; If applicable, HQL parser will be used.
+[2026-06-23T11:33:54.680Z] [WARN] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2026-06-23T11:33:55.055Z] [WARN] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'subProtocolWebSocketHandler'
+[2026-06-23T11:33:55.057Z] [INFO] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T11:33:55.060Z] [INFO] HikariPool-1 - Shutdown initiated...
+[2026-06-23T11:33:55.560Z] [INFO] HikariPool-1 - Shutdown completed.
+[2026-06-23T11:33:55.573Z] [INFO] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+[2026-06-23T11:33:55.590Z] [ERROR] Application run failed
+org.springframework.context.ApplicationContextException: Failed to start bean 'subProtocolWebSocketHandler'
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:423)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:409)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:402)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:613)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:379)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:306)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:1013)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at com.proyecto.detector.DetectorApplication.main(DetectorApplication.java:10)
+Caused by: java.lang.IllegalStateException: No handlers
+	at org.springframework.util.Assert.state(Assert.java:80)
+	at org.springframework.web.socket.messaging.SubProtocolWebSocketHandler.start(SubProtocolWebSocketHandler.java:287)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:420)
+	... 15 common frames omitted
+[2026-06-23T11:34:16.023Z] [INFO] Starting DetectorApplication using Java 21.0.11 with PID 3004 (C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd\target\classes started by Usuario in C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd)
+[2026-06-23T11:34:16.026Z] [INFO] No active profile set, falling back to 1 default profile: "default"
+[2026-06-23T11:34:16.753Z] [INFO] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2026-06-23T11:34:16.845Z] [INFO] Finished Spring Data repository scanning in 80 ms. Found 5 JPA repository interfaces.
+[2026-06-23T11:34:17.448Z] [INFO] Tomcat initialized with port 8080 (http)
+[2026-06-23T11:34:17.461Z] [INFO] Initializing ProtocolHandler ["http-nio-8080"]
+[2026-06-23T11:34:17.462Z] [INFO] Starting service [Tomcat]
+[2026-06-23T11:34:17.462Z] [INFO] Starting Servlet engine: [Apache Tomcat/11.0.21]
+[2026-06-23T11:34:17.530Z] [INFO] Root WebApplicationContext: initialization completed in 1456 ms
+[2026-06-23T11:34:17.701Z] [INFO] HHH008540: Processing PersistenceUnitInfo [name: default]
+[2026-06-23T11:34:17.745Z] [INFO] HHH000001: Hibernate ORM core version 7.2.12.Final
+[2026-06-23T11:34:18.358Z] [INFO] No LoadTimeWeaver setup: ignoring JPA class transformer
+[2026-06-23T11:34:18.405Z] [INFO] HikariPool-1 - Starting...
+[2026-06-23T11:34:19.667Z] [INFO] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@40d10264
+[2026-06-23T11:34:19.669Z] [INFO] HikariPool-1 - Start completed.
+[2026-06-23T11:34:19.817Z] [WARN] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2026-06-23T11:34:20.261Z] [INFO] HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-noisy-pine-apct0js4.c-7.us-east-1.aws.neon.tech:5432/neondb?sslmode=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.10
+	Default catalog/schema: neondb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2026-06-23T11:34:21.470Z] [INFO] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-06-23T11:34:21.946Z] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T11:34:22.032Z] [INFO] Hibernate is in classpath; If applicable, HQL parser will be used.
+[2026-06-23T11:34:22.476Z] [WARN] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2026-06-23T11:34:22.847Z] [INFO] Starting...
+[2026-06-23T11:34:22.848Z] [INFO] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@5ed1bc4f]]
+[2026-06-23T11:34:22.849Z] [INFO] Started.
+[2026-06-23T11:34:22.850Z] [INFO] Starting ProtocolHandler ["http-nio-8080"]
+[2026-06-23T11:34:22.871Z] [INFO] Tomcat started on port 8080 (http) with context path '/'
+[2026-06-23T11:34:22.877Z] [INFO] Started DetectorApplication in 7.442 seconds (process running for 7.861)
+[2026-06-23T11:34:32.130Z] [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2026-06-23T11:34:32.131Z] [INFO] Initializing Servlet 'dispatcherServlet'
+[2026-06-23T11:34:32.133Z] [INFO] Completed initialization in 2 ms
+[2026-06-23T11:34:33.146Z] [INFO] A cookie header was received [g_state={"i_l":0,"i_ll":1782232138539,"i_e":{"enable_itp_optimization":24},"i_et":1782232138539}] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+[2026-06-23T11:35:22.861Z] [INFO] WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 2 total, 0 closed abnormally (0 connect failure, 0 send limit, 1 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 3, active threads = 0, queued tasks = 0, completed tasks = 3], outboundChannel[pool size = 1, active threads = 0, queued tasks = 0, completed tasks = 1], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+[2026-06-23T11:54:04.398Z] [INFO] No messages received after 1171157 ms. Closing StandardWebSocketSession[id=82bcc99b-badd-07b8-5981-8c9c6066c875, uri=ws://localhost:8080/ws/geo].
+[2026-06-23T12:05:22.877Z] [INFO] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 4 total, 1 closed abnormally (1 connect failure, 0 send limit, 2 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 12], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 4], sockJsScheduler[pool size = 2, active threads = 1, queued tasks = 0, completed tasks = 1]
+[2026-06-23T12:09:19.583Z] [INFO] POST /login - Intento de inicio de sesión para: fcjimenez@espe.edu.ec
+[2026-06-23T12:09:19.584Z] [INFO] POST /login - Inicio de sesión exitoso
+[2026-06-23T12:19:52.367Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@6b786f32 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T12:19:52.390Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@49c054bc (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T12:19:52.403Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@9d36201 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T12:19:52.411Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@21fa9df6 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T12:19:52.419Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@18157db0 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T12:19:52.421Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@533bbfba (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T12:19:52.431Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@416a0cb6 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T12:19:52.439Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@348a3c40 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T12:19:52.441Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@7412f9c (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T12:19:52.451Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@98996a1 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T12:30:07.110Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@2760ba96 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T12:30:08.331Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@38aa9a7 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T12:30:10.876Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@1baa5ee6 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T12:30:21.880Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@393ce30f (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T12:30:34.261Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@4edf872b (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T12:30:45.565Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@59310215 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T12:31:32.139Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@5551a41 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T12:31:35.927Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@edf47a4 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T12:31:37.630Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@304a6027 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T12:31:46.436Z] [WARN] HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@1de0f37d (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+[2026-06-23T12:35:49.469Z] [INFO] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 4 total, 1 closed abnormally (1 connect failure, 0 send limit, 2 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 12], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 4], sockJsScheduler[pool size = 3, active threads = 1, queued tasks = 0, completed tasks = 2]
+[2026-06-23T13:02:12.780Z] [INFO] Commencing graceful shutdown. Waiting for active requests to complete
+[2026-06-23T13:02:12.808Z] [INFO] Graceful shutdown complete
+[2026-06-23T13:02:12.816Z] [INFO] Stopping...
+[2026-06-23T13:02:12.816Z] [INFO] BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@5ed1bc4f]]
+[2026-06-23T13:02:12.817Z] [INFO] Stopped.
+[2026-06-23T13:02:12.830Z] [INFO] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T13:02:12.846Z] [INFO] HikariPool-1 - Shutdown initiated...
+[2026-06-23T13:02:13.313Z] [INFO] HikariPool-1 - Shutdown completed.
+[2026-06-23T19:46:18.357Z] [INFO] Starting DetectorApplication using Java 21.0.11 with PID 27208 (C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd\target\classes started by Usuario in C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd)
+[2026-06-23T19:46:18.359Z] [INFO] No active profile set, falling back to 1 default profile: "default"
+[2026-06-23T19:46:19.914Z] [INFO] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2026-06-23T19:46:20.065Z] [INFO] Finished Spring Data repository scanning in 130 ms. Found 5 JPA repository interfaces.
+[2026-06-23T19:46:21.251Z] [INFO] Tomcat initialized with port 8080 (http)
+[2026-06-23T19:46:21.283Z] [INFO] Initializing ProtocolHandler ["http-nio-8080"]
+[2026-06-23T19:46:21.287Z] [INFO] Starting service [Tomcat]
+[2026-06-23T19:46:21.288Z] [INFO] Starting Servlet engine: [Apache Tomcat/11.0.21]
+[2026-06-23T19:46:21.489Z] [INFO] Root WebApplicationContext: initialization completed in 3076 ms
+[2026-06-23T19:46:21.862Z] [INFO] HHH008540: Processing PersistenceUnitInfo [name: default]
+[2026-06-23T19:46:21.999Z] [INFO] HHH000001: Hibernate ORM core version 7.2.12.Final
+[2026-06-23T19:46:23.173Z] [INFO] No LoadTimeWeaver setup: ignoring JPA class transformer
+[2026-06-23T19:46:23.257Z] [INFO] HikariPool-1 - Starting...
+[2026-06-23T19:46:25.498Z] [INFO] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@131777e8
+[2026-06-23T19:46:25.501Z] [INFO] HikariPool-1 - Start completed.
+[2026-06-23T19:46:25.721Z] [WARN] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2026-06-23T19:46:26.183Z] [INFO] HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-noisy-pine-apct0js4.c-7.us-east-1.aws.neon.tech:5432/neondb?sslmode=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.10
+	Default catalog/schema: neondb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2026-06-23T19:46:28.665Z] [INFO] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-06-23T19:46:29.250Z] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T19:46:29.466Z] [INFO] Hibernate is in classpath; If applicable, HQL parser will be used.
+[2026-06-23T19:46:30.443Z] [WARN] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2026-06-23T19:46:31.212Z] [INFO] Starting...
+[2026-06-23T19:46:31.213Z] [INFO] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@7e38d2a2]]
+[2026-06-23T19:46:31.214Z] [INFO] Started.
+[2026-06-23T19:46:31.215Z] [INFO] Starting ProtocolHandler ["http-nio-8080"]
+[2026-06-23T19:46:31.250Z] [INFO] Tomcat started on port 8080 (http) with context path '/'
+[2026-06-23T19:46:31.262Z] [INFO] Started DetectorApplication in 13.97 seconds (process running for 15.743)
+[2026-06-23T19:47:31.229Z] [INFO] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+[2026-06-23T20:03:37.505Z] [INFO] Commencing graceful shutdown. Waiting for active requests to complete
+[2026-06-23T20:03:37.563Z] [INFO] Graceful shutdown complete
+[2026-06-23T20:03:37.576Z] [INFO] Stopping...
+[2026-06-23T20:03:37.578Z] [INFO] BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@7e38d2a2]]
+[2026-06-23T20:03:37.579Z] [INFO] Stopped.
+[2026-06-23T20:03:37.589Z] [INFO] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2026-06-23T20:03:37.621Z] [INFO] HikariPool-1 - Shutdown initiated...
+[2026-06-23T20:03:38.649Z] [INFO] HikariPool-1 - Shutdown completed.

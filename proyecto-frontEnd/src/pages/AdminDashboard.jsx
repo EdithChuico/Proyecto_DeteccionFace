@@ -16,9 +16,9 @@ const AdminDashboard = () => {
     const [latitud, setLatitud] = useState('-0.253039');
     const [longitud, setLongitud] = useState('-79.175355');
     const [radio, setRadio] = useState('100');
-
     // Estados para la cámara y el formulario de enrolamiento automatizado
     const webcamRef = useRef(null);
+    const [errorCedula, setErrorCedula] = useState('');
     const [nombre, setNombre] = useState('');
     const [idEmpleado, setIdEmpleado] = useState('');
     const [contadorFotos, setContadorFotos] = useState(0);
@@ -26,6 +26,24 @@ const AdminDashboard = () => {
     const [registroCompleto, setRegistroCompleto] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [empleadoSeleccionado, setEmpleadoSeleccionado] = useState({ id: '', nombre: '', estado: 'Activo' });
+    // NUEVA FUNCIÓN: Validador de cédula ecuatoriana
+    const validarCedulaEcuatoriana = (cedula) => {
+        if (!cedula || cedula.length !== 10 || !/^\d+$/.test(cedula)) return false;
+        const provincia = parseInt(cedula.substring(0, 2), 10);
+        if ((provincia < 1 || provincia > 24) && provincia !== 30) return false;
+        const tercerDigito = parseInt(cedula.substring(2, 3), 10);
+        if (tercerDigito >= 6) return false;
+        const coeficientes = [2, 1, 2, 1, 2, 1, 2, 1, 2];
+        let suma = 0;
+        for (let i = 0; i < coeficientes.length; i++) {
+            let valor = parseInt(cedula.charAt(i), 10) * coeficientes[i];
+            suma += valor > 9 ? valor - 9 : valor;
+        }
+        const digitoVerificadorEsperado = suma % 10 === 0 ? 0 : 10 - (suma % 10);
+        const digitoVerificadorReal = parseInt(cedula.charAt(9), 10);
+        return digitoVerificadorEsperado === digitoVerificadorReal;
+    };
+
     const cargarDatos = async () => {
         try {
             const [resEmp, resAsist] = await Promise.all([
@@ -95,11 +113,15 @@ const AdminDashboard = () => {
     };
 
     const iniciarRafagaCaptura = async () => {
+        setErrorCedula('');
         if (!nombre.trim() || !idEmpleado.trim()) {
             alert("Por favor, ingresa la Cédula/ID y el Nombre Completo antes de iniciar.");
             return;
         }
-
+        if (!validarCedulaEcuatoriana(idEmpleado)) {
+            setErrorCedula('Cédula ecuatoriana inválida. Verifique los dígitos.');
+            return;
+        }
         setEnrolando(true);
         setRegistroCompleto(false);
         setContadorFotos(0);
@@ -221,7 +243,24 @@ const AdminDashboard = () => {
                         <div style={{ display: 'flex', gap: '20px', marginBottom: '25px', marginTop: '20px' }}>
                             <div className="form-group">
                                 <label className="form-label">ID / Cédula:</label>
-                                <input type="text" placeholder="Ej. 1726354120" value={idEmpleado} onChange={(e) => setIdEmpleado(e.target.value)} disabled={enrolando || registroCompleto} className="input-text" />
+                                <input
+                                    type="text"
+                                    placeholder="Ej. 1726354120"
+                                    value={idEmpleado}
+                                    onChange={(e) => {
+                                        setIdEmpleado(e.target.value);
+                                        if (errorCedula) setErrorCedula('');
+                                    }}
+                                    disabled={enrolando || registroCompleto}
+                                    className={`input-text ${errorCedula ? 'input-error' : ''}`}
+                                    style={errorCedula ? { borderColor: '#ef4444' } : {}}
+                                />
+                                {/* TEXTO DE ERROR ROJO DEBAJO DEL INPUT */}
+                                {errorCedula && (
+                                    <span style={{ color: '#ef4444', fontSize: '13px', marginTop: '4px', display: 'block', fontWeight: '500' }}>
+                                        {errorCedula}
+                                    </span>
+                                )}
                             </div>
                             <div className="form-group">
                                 <label className="form-label">Nombre Completo:</label>
