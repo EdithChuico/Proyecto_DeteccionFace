@@ -13,7 +13,16 @@ public class UsuarioAdmin {
     private String password;
     @Column(nullable = false)
     private String nombre;
-    // Constructor vacío
+
+    @Column(name = "mfa_habilitado")
+    private boolean mfaHabilitado = false;
+
+    @Column(name = "mfa_secret")
+    private String mfaSecret;
+
+    @Column(name = "otp_temporal")
+    private String otpTemporal;
+
     public UsuarioAdmin() {}
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
