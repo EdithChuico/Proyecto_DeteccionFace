@@ -1,0 +1,482 @@
+[2026-07-30T21:13:45.667Z] [INFO] Starting DetectorApplication using Java 21.0.11 with PID 17076 (C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd\target\classes started by Usuario in C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd)
+[2026-07-30T21:13:45.674Z] [INFO] No active profile set, falling back to 1 default profile: "default"
+[2026-07-30T21:13:46.825Z] [INFO] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2026-07-30T21:13:46.966Z] [INFO] Finished Spring Data repository scanning in 126 ms. Found 5 JPA repository interfaces.
+[2026-07-30T21:13:47.842Z] [INFO] Tomcat initialized with port 8080 (http)
+[2026-07-30T21:13:47.858Z] [INFO] Initializing ProtocolHandler ["http-nio-8080"]
+[2026-07-30T21:13:47.861Z] [INFO] Starting service [Tomcat]
+[2026-07-30T21:13:47.862Z] [INFO] Starting Servlet engine: [Apache Tomcat/11.0.21]
+[2026-07-30T21:13:47.934Z] [INFO] Root WebApplicationContext: initialization completed in 2200 ms
+[2026-07-30T21:13:48.281Z] [INFO] HHH008540: Processing PersistenceUnitInfo [name: default]
+[2026-07-30T21:13:48.387Z] [INFO] HHH000001: Hibernate ORM core version 7.2.12.Final
+[2026-07-30T21:13:49.210Z] [INFO] No LoadTimeWeaver setup: ignoring JPA class transformer
+[2026-07-30T21:13:49.258Z] [INFO] HikariPool-1 - Starting...
+[2026-07-30T21:13:55.387Z] [INFO] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1dc9f5ad
+[2026-07-30T21:13:55.391Z] [INFO] HikariPool-1 - Start completed.
+[2026-07-30T21:13:55.608Z] [WARN] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2026-07-30T21:13:56.034Z] [INFO] HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-noisy-pine-apct0js4.c-7.us-east-1.aws.neon.tech:5432/neondb?sslmode=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.10
+	Default catalog/schema: neondb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2026-07-30T21:13:57.778Z] [INFO] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-07-30T21:13:58.393Z] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2026-07-30T21:13:58.580Z] [INFO] Hibernate is in classpath; If applicable, HQL parser will be used.
+[2026-07-30T21:13:59.575Z] [WARN] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2026-07-30T21:14:00.270Z] [INFO] Starting...
+[2026-07-30T21:14:00.271Z] [INFO] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@34986491]]
+[2026-07-30T21:14:00.272Z] [INFO] Started.
+[2026-07-30T21:14:00.273Z] [INFO] Starting ProtocolHandler ["http-nio-8080"]
+[2026-07-30T21:14:00.305Z] [INFO] Tomcat started on port 8080 (http) with context path '/'
+[2026-07-30T21:14:00.311Z] [INFO] Started DetectorApplication in 15.747 seconds (process running for 29.123)
+[2026-07-30T21:15:00.281Z] [INFO] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+[2026-07-30T21:18:39.150Z] [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2026-07-30T21:18:39.151Z] [INFO] Initializing Servlet 'dispatcherServlet'
+[2026-07-30T21:18:39.155Z] [INFO] Completed initialization in 3 ms
+[2026-07-30T21:34:11.358Z] [INFO] POST /login - Intento de inicio de sesión para: fcjimenez@espe.edu.ec
+[2026-07-30T21:34:11.359Z] [INFO] POST /login - Inicio de sesión exitoso
+[2026-07-30T21:45:00.298Z] [INFO] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 2, active threads = 1, queued tasks = 0, completed tasks = 1]
+[2026-07-30T22:14:48.113Z] [INFO] Commencing graceful shutdown. Waiting for active requests to complete
+[2026-07-30T22:14:48.155Z] [INFO] Graceful shutdown complete
+[2026-07-30T22:14:48.166Z] [INFO] Stopping...
+[2026-07-30T22:14:48.167Z] [INFO] BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@34986491]]
+[2026-07-30T22:14:48.167Z] [INFO] Stopped.
+[2026-07-30T22:14:48.174Z] [INFO] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2026-07-30T22:14:48.193Z] [INFO] HikariPool-1 - Shutdown initiated...
+[2026-07-30T22:14:49.239Z] [INFO] HikariPool-1 - Shutdown completed.
+[2026-07-30T22:14:57.042Z] [INFO] Starting DetectorApplication using Java 21.0.11 with PID 31056 (C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd\target\classes started by Usuario in C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd)
+[2026-07-30T22:14:57.045Z] [INFO] No active profile set, falling back to 1 default profile: "default"
+[2026-07-30T22:14:57.772Z] [INFO] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2026-07-30T22:14:57.828Z] [INFO] Finished Spring Data repository scanning in 48 ms. Found 5 JPA repository interfaces.
+[2026-07-30T22:14:58.364Z] [INFO] Tomcat initialized with port 8080 (http)
+[2026-07-30T22:14:58.377Z] [INFO] Initializing ProtocolHandler ["http-nio-8080"]
+[2026-07-30T22:14:58.379Z] [INFO] Starting service [Tomcat]
+[2026-07-30T22:14:58.379Z] [INFO] Starting Servlet engine: [Apache Tomcat/11.0.21]
+[2026-07-30T22:14:58.448Z] [INFO] Root WebApplicationContext: initialization completed in 1357 ms
+[2026-07-30T22:14:58.608Z] [INFO] HHH008540: Processing PersistenceUnitInfo [name: default]
+[2026-07-30T22:14:58.679Z] [INFO] HHH000001: Hibernate ORM core version 7.2.12.Final
+[2026-07-30T22:14:59.104Z] [INFO] No LoadTimeWeaver setup: ignoring JPA class transformer
+[2026-07-30T22:14:59.147Z] [INFO] HikariPool-1 - Starting...
+[2026-07-30T22:15:00.635Z] [INFO] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@69b1e8f8
+[2026-07-30T22:15:00.636Z] [INFO] HikariPool-1 - Start completed.
+[2026-07-30T22:15:00.813Z] [WARN] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2026-07-30T22:15:01.367Z] [INFO] HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-noisy-pine-apct0js4.c-7.us-east-1.aws.neon.tech:5432/neondb?sslmode=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.10
+	Default catalog/schema: neondb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2026-07-30T22:15:02.541Z] [INFO] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-07-30T22:15:03.540Z] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2026-07-30T22:15:03.653Z] [INFO] Hibernate is in classpath; If applicable, HQL parser will be used.
+[2026-07-30T22:15:04.162Z] [WARN] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2026-07-30T22:15:04.446Z] [INFO] Starting...
+[2026-07-30T22:15:04.446Z] [INFO] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@377b7798]]
+[2026-07-30T22:15:04.446Z] [INFO] Started.
+[2026-07-30T22:15:04.447Z] [INFO] Starting ProtocolHandler ["http-nio-8080"]
+[2026-07-30T22:15:04.461Z] [INFO] Tomcat started on port 8080 (http) with context path '/'
+[2026-07-30T22:15:04.468Z] [INFO] Started DetectorApplication in 8.09 seconds (process running for 8.672)
+[2026-07-30T22:16:04.460Z] [INFO] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+[2026-07-30T22:26:22.350Z] [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2026-07-30T22:26:22.351Z] [INFO] Initializing Servlet 'dispatcherServlet'
+[2026-07-30T22:26:22.353Z] [INFO] Completed initialization in 2 ms
+[2026-07-30T22:29:16.426Z] [ERROR] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.orm.jpa.JpaSystemException: Null value was assigned to a property [class com.proyecto.detector.model.UsuarioAdmin.mfaHabilitado] of primitive type: 'com.proyecto.detector.model.UsuarioAdmin.mfaHabilitado' (setter)] with root cause
+java.lang.IllegalArgumentException: Can not set boolean field com.proyecto.detector.model.UsuarioAdmin.mfaHabilitado to null value
+	at java.base/jdk.internal.reflect.FieldAccessorImpl.throwSetIllegalArgumentException(FieldAccessorImpl.java:228)
+	at java.base/jdk.internal.reflect.FieldAccessorImpl.throwSetIllegalArgumentException(FieldAccessorImpl.java:232)
+	at java.base/jdk.internal.reflect.MethodHandleBooleanFieldAccessorImpl.set(MethodHandleBooleanFieldAccessorImpl.java:111)
+	at java.base/java.lang.reflect.Field.set(Field.java:836)
+	at org.hibernate.property.access.spi.SetterFieldImpl.set(SetterFieldImpl.java:56)
+	at org.hibernate.persister.entity.AbstractEntityPersister.setPropertyValues(AbstractEntityPersister.java:4137)
+	at org.hibernate.persister.entity.EntityPersister.setValues(EntityPersister.java:1153)
+	at org.hibernate.sql.results.graph.entity.internal.EntityInitializerImpl.initializeEntityInstance(EntityInitializerImpl.java:1597)
+	at org.hibernate.sql.results.graph.entity.internal.EntityInitializerImpl.initializeInstance(EntityInitializerImpl.java:1501)
+	at org.hibernate.sql.results.graph.entity.internal.EntityInitializerImpl.initializeInstance(EntityInitializerImpl.java:80)
+	at org.hibernate.sql.results.internal.StandardRowReader.coordinateInitializers(StandardRowReader.java:239)
+	at org.hibernate.sql.results.internal.StandardRowReader.readRow(StandardRowReader.java:137)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.read(ListResultsConsumer.java:243)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.readRows(ListResultsConsumer.java:233)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:164)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:31)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:213)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:100)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.executeQuery(JdbcSelectExecutor.java:63)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:137)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$1(ConcreteSqmSelectQueryPlan.java:134)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:464)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:392)
+	at org.hibernate.query.sqm.internal.SqmQueryImpl.doList(SqmQueryImpl.java:374)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:153)
+	at org.hibernate.query.spi.AbstractSelectionQuery.getSingleResultOrNull(AbstractSelectionQuery.java:330)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution$SingleEntityExecution.doExecute(JpaQueryExecution.java:328)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:99)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:164)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:154)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:169)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:167)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:146)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:133)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:371)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:130)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:135)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:222)
+	at jdk.proxy2/jdk.proxy2.$Proxy133.findByCorreo(Unknown Source)
+	at com.proyecto.detector.controller.AuthController.autenticarConPassword(AuthController.java:85)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2026-07-30T22:34:56.243Z] [ERROR] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.orm.jpa.JpaSystemException: Null value was assigned to a property [class com.proyecto.detector.model.UsuarioAdmin.mfaHabilitado] of primitive type: 'com.proyecto.detector.model.UsuarioAdmin.mfaHabilitado' (setter)] with root cause
+java.lang.IllegalArgumentException: Can not set boolean field com.proyecto.detector.model.UsuarioAdmin.mfaHabilitado to null value
+	at java.base/jdk.internal.reflect.FieldAccessorImpl.throwSetIllegalArgumentException(FieldAccessorImpl.java:228)
+	at java.base/jdk.internal.reflect.FieldAccessorImpl.throwSetIllegalArgumentException(FieldAccessorImpl.java:232)
+	at java.base/jdk.internal.reflect.MethodHandleBooleanFieldAccessorImpl.set(MethodHandleBooleanFieldAccessorImpl.java:111)
+	at java.base/java.lang.reflect.Field.set(Field.java:836)
+	at org.hibernate.property.access.spi.SetterFieldImpl.set(SetterFieldImpl.java:56)
+	at org.hibernate.persister.entity.AbstractEntityPersister.setPropertyValues(AbstractEntityPersister.java:4137)
+	at org.hibernate.persister.entity.EntityPersister.setValues(EntityPersister.java:1153)
+	at org.hibernate.sql.results.graph.entity.internal.EntityInitializerImpl.initializeEntityInstance(EntityInitializerImpl.java:1597)
+	at org.hibernate.sql.results.graph.entity.internal.EntityInitializerImpl.initializeInstance(EntityInitializerImpl.java:1501)
+	at org.hibernate.sql.results.graph.entity.internal.EntityInitializerImpl.initializeInstance(EntityInitializerImpl.java:80)
+	at org.hibernate.sql.results.internal.StandardRowReader.coordinateInitializers(StandardRowReader.java:239)
+	at org.hibernate.sql.results.internal.StandardRowReader.readRow(StandardRowReader.java:137)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.read(ListResultsConsumer.java:243)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.readRows(ListResultsConsumer.java:233)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:164)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:31)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:213)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:100)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.executeQuery(JdbcSelectExecutor.java:63)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:137)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$1(ConcreteSqmSelectQueryPlan.java:134)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:464)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:392)
+	at org.hibernate.query.sqm.internal.SqmQueryImpl.doList(SqmQueryImpl.java:374)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:153)
+	at org.hibernate.query.spi.AbstractSelectionQuery.getSingleResultOrNull(AbstractSelectionQuery.java:330)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution$SingleEntityExecution.doExecute(JpaQueryExecution.java:328)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:99)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:164)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:154)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:169)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:167)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:146)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:133)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:371)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:130)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:135)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:222)
+	at jdk.proxy2/jdk.proxy2.$Proxy133.findByCorreo(Unknown Source)
+	at com.proyecto.detector.controller.AuthController.autenticarConPassword(AuthController.java:85)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2026-07-30T22:43:38.222Z] [INFO] Commencing graceful shutdown. Waiting for active requests to complete
+[2026-07-30T22:43:38.244Z] [INFO] Graceful shutdown complete
+[2026-07-30T22:43:38.247Z] [INFO] Stopping...
+[2026-07-30T22:43:38.247Z] [INFO] BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@377b7798]]
+[2026-07-30T22:43:38.248Z] [INFO] Stopped.
+[2026-07-30T22:43:38.250Z] [INFO] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2026-07-30T22:43:38.252Z] [INFO] HikariPool-1 - Shutdown initiated...
+[2026-07-30T22:43:39.412Z] [INFO] HikariPool-1 - Shutdown completed.
+[2026-07-30T22:43:43.583Z] [INFO] Starting DetectorApplication using Java 21.0.11 with PID 13156 (C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd\target\classes started by Usuario in C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd)
+[2026-07-30T22:43:43.584Z] [INFO] No active profile set, falling back to 1 default profile: "default"
+[2026-07-30T22:43:44.178Z] [INFO] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2026-07-30T22:43:44.255Z] [INFO] Finished Spring Data repository scanning in 69 ms. Found 5 JPA repository interfaces.
+[2026-07-30T22:43:44.828Z] [INFO] Tomcat initialized with port 8080 (http)
+[2026-07-30T22:43:44.846Z] [INFO] Initializing ProtocolHandler ["http-nio-8080"]
+[2026-07-30T22:43:44.848Z] [INFO] Starting service [Tomcat]
+[2026-07-30T22:43:44.849Z] [INFO] Starting Servlet engine: [Apache Tomcat/11.0.21]
+[2026-07-30T22:43:44.967Z] [INFO] Root WebApplicationContext: initialization completed in 1343 ms
+[2026-07-30T22:43:45.140Z] [INFO] HHH008540: Processing PersistenceUnitInfo [name: default]
+[2026-07-30T22:43:45.207Z] [INFO] HHH000001: Hibernate ORM core version 7.2.12.Final
+[2026-07-30T22:43:45.836Z] [INFO] No LoadTimeWeaver setup: ignoring JPA class transformer
+[2026-07-30T22:43:45.889Z] [INFO] HikariPool-1 - Starting...
+[2026-07-30T22:43:47.467Z] [INFO] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@69b1e8f8
+[2026-07-30T22:43:47.470Z] [INFO] HikariPool-1 - Start completed.
+[2026-07-30T22:43:48.088Z] [WARN] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2026-07-30T22:43:48.665Z] [INFO] HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-noisy-pine-apct0js4.c-7.us-east-1.aws.neon.tech:5432/neondb?sslmode=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.10
+	Default catalog/schema: neondb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2026-07-30T22:43:49.765Z] [INFO] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-07-30T22:43:50.329Z] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2026-07-30T22:43:50.396Z] [INFO] Hibernate is in classpath; If applicable, HQL parser will be used.
+[2026-07-30T22:43:50.844Z] [WARN] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2026-07-30T22:43:51.119Z] [INFO] Starting...
+[2026-07-30T22:43:51.119Z] [INFO] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@655295bd]]
+[2026-07-30T22:43:51.119Z] [INFO] Started.
+[2026-07-30T22:43:51.120Z] [INFO] Starting ProtocolHandler ["http-nio-8080"]
+[2026-07-30T22:43:51.135Z] [INFO] Tomcat started on port 8080 (http) with context path '/'
+[2026-07-30T22:43:51.143Z] [INFO] Started DetectorApplication in 8.039 seconds (process running for 8.438)
+[2026-07-30T22:44:51.124Z] [INFO] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+[2026-07-30T22:45:44.624Z] [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2026-07-30T22:45:44.625Z] [INFO] Initializing Servlet 'dispatcherServlet'
+[2026-07-30T22:45:44.628Z] [INFO] Completed initialization in 3 ms
+[2026-07-30T22:53:18.087Z] [INFO] Commencing graceful shutdown. Waiting for active requests to complete
+[2026-07-30T22:53:18.117Z] [INFO] Graceful shutdown complete
+[2026-07-30T22:53:18.121Z] [INFO] Stopping...
+[2026-07-30T22:53:18.122Z] [INFO] BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@655295bd]]
+[2026-07-30T22:53:18.122Z] [INFO] Stopped.
+[2026-07-30T22:53:18.124Z] [INFO] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2026-07-30T22:53:18.128Z] [INFO] HikariPool-1 - Shutdown initiated...
+[2026-07-30T22:53:19.169Z] [INFO] HikariPool-1 - Shutdown completed.
+[2026-07-30T22:53:23.049Z] [INFO] Starting DetectorApplication using Java 21.0.11 with PID 19668 (C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd\target\classes started by Usuario in C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd)
+[2026-07-30T22:53:23.052Z] [INFO] No active profile set, falling back to 1 default profile: "default"
+[2026-07-30T22:53:23.635Z] [INFO] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2026-07-30T22:53:23.701Z] [INFO] Finished Spring Data repository scanning in 56 ms. Found 5 JPA repository interfaces.
+[2026-07-30T22:53:24.336Z] [INFO] Tomcat initialized with port 8080 (http)
+[2026-07-30T22:53:24.352Z] [INFO] Initializing ProtocolHandler ["http-nio-8080"]
+[2026-07-30T22:53:24.355Z] [INFO] Starting service [Tomcat]
+[2026-07-30T22:53:24.357Z] [INFO] Starting Servlet engine: [Apache Tomcat/11.0.21]
+[2026-07-30T22:53:24.432Z] [INFO] Root WebApplicationContext: initialization completed in 1342 ms
+[2026-07-30T22:53:24.650Z] [INFO] HHH008540: Processing PersistenceUnitInfo [name: default]
+[2026-07-30T22:53:24.737Z] [INFO] HHH000001: Hibernate ORM core version 7.2.12.Final
+[2026-07-30T22:53:25.334Z] [INFO] No LoadTimeWeaver setup: ignoring JPA class transformer
+[2026-07-30T22:53:25.380Z] [INFO] HikariPool-1 - Starting...
+[2026-07-30T22:53:27.169Z] [INFO] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1e000a17
+[2026-07-30T22:53:27.171Z] [INFO] HikariPool-1 - Start completed.
+[2026-07-30T22:53:27.362Z] [WARN] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2026-07-30T22:53:27.897Z] [INFO] HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-noisy-pine-apct0js4.c-7.us-east-1.aws.neon.tech:5432/neondb?sslmode=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.10
+	Default catalog/schema: neondb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2026-07-30T22:53:29.228Z] [INFO] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-07-30T22:53:29.811Z] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2026-07-30T22:53:29.901Z] [INFO] Hibernate is in classpath; If applicable, HQL parser will be used.
+[2026-07-30T22:53:30.401Z] [WARN] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2026-07-30T22:53:30.724Z] [INFO] Starting...
+[2026-07-30T22:53:30.725Z] [INFO] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@1c63b39a]]
+[2026-07-30T22:53:30.725Z] [INFO] Started.
+[2026-07-30T22:53:30.725Z] [INFO] Starting ProtocolHandler ["http-nio-8080"]
+[2026-07-30T22:53:30.752Z] [INFO] Tomcat started on port 8080 (http) with context path '/'
+[2026-07-30T22:53:30.756Z] [INFO] Started DetectorApplication in 8.16 seconds (process running for 8.543)
+[2026-07-30T22:54:30.735Z] [INFO] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+[2026-07-30T22:55:15.593Z] [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2026-07-30T22:55:15.593Z] [INFO] Initializing Servlet 'dispatcherServlet'
+[2026-07-30T22:55:15.594Z] [INFO] Completed initialization in 1 ms
+[2026-07-30T22:58:57.122Z] [INFO] Commencing graceful shutdown. Waiting for active requests to complete
+[2026-07-30T22:58:57.150Z] [INFO] Graceful shutdown complete
+[2026-07-30T22:58:57.152Z] [INFO] Stopping...
+[2026-07-30T22:58:57.153Z] [INFO] BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@1c63b39a]]
+[2026-07-30T22:58:57.153Z] [INFO] Stopped.
+[2026-07-30T22:58:57.155Z] [INFO] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2026-07-30T22:58:57.157Z] [INFO] HikariPool-1 - Shutdown initiated...
+[2026-07-30T22:58:58.221Z] [INFO] HikariPool-1 - Shutdown completed.
+[2026-07-30T22:59:02.167Z] [INFO] Starting DetectorApplication using Java 21.0.11 with PID 17064 (C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd\target\classes started by Usuario in C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd)
+[2026-07-30T22:59:02.170Z] [INFO] No active profile set, falling back to 1 default profile: "default"
+[2026-07-30T22:59:02.816Z] [INFO] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2026-07-30T22:59:02.891Z] [INFO] Finished Spring Data repository scanning in 64 ms. Found 5 JPA repository interfaces.
+[2026-07-30T22:59:03.511Z] [INFO] Tomcat initialized with port 8080 (http)
+[2026-07-30T22:59:03.525Z] [INFO] Initializing ProtocolHandler ["http-nio-8080"]
+[2026-07-30T22:59:03.528Z] [INFO] Starting service [Tomcat]
+[2026-07-30T22:59:03.528Z] [INFO] Starting Servlet engine: [Apache Tomcat/11.0.21]
+[2026-07-30T22:59:03.602Z] [INFO] Root WebApplicationContext: initialization completed in 1384 ms
+[2026-07-30T22:59:03.750Z] [INFO] HHH008540: Processing PersistenceUnitInfo [name: default]
+[2026-07-30T22:59:03.795Z] [INFO] HHH000001: Hibernate ORM core version 7.2.12.Final
+[2026-07-30T22:59:04.293Z] [INFO] No LoadTimeWeaver setup: ignoring JPA class transformer
+[2026-07-30T22:59:04.320Z] [INFO] HikariPool-1 - Starting...
+[2026-07-30T22:59:05.942Z] [INFO] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1e000a17
+[2026-07-30T22:59:05.944Z] [INFO] HikariPool-1 - Start completed.
+[2026-07-30T22:59:06.096Z] [WARN] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2026-07-30T22:59:06.649Z] [INFO] HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-noisy-pine-apct0js4.c-7.us-east-1.aws.neon.tech:5432/neondb?sslmode=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.10
+	Default catalog/schema: neondb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2026-07-30T22:59:07.561Z] [INFO] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-07-30T22:59:08.136Z] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2026-07-30T22:59:08.218Z] [INFO] Hibernate is in classpath; If applicable, HQL parser will be used.
+[2026-07-30T22:59:08.639Z] [WARN] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2026-07-30T22:59:08.905Z] [INFO] Starting...
+[2026-07-30T22:59:08.905Z] [INFO] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@1c63b39a]]
+[2026-07-30T22:59:08.906Z] [INFO] Started.
+[2026-07-30T22:59:08.906Z] [INFO] Starting ProtocolHandler ["http-nio-8080"]
+[2026-07-30T22:59:08.929Z] [INFO] Tomcat started on port 8080 (http) with context path '/'
+[2026-07-30T22:59:08.933Z] [INFO] Started DetectorApplication in 7.253 seconds (process running for 7.636)
+[2026-07-30T23:00:08.917Z] [INFO] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+[2026-07-30T23:12:21.950Z] [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2026-07-30T23:12:21.950Z] [INFO] Initializing Servlet 'dispatcherServlet'
+[2026-07-30T23:12:21.951Z] [INFO] Completed initialization in 1 ms
+[2026-07-30T23:23:27.086Z] [INFO] Commencing graceful shutdown. Waiting for active requests to complete
+[2026-07-30T23:23:27.109Z] [INFO] Graceful shutdown complete
+[2026-07-30T23:23:27.111Z] [INFO] Stopping...
+[2026-07-30T23:23:27.112Z] [INFO] BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@1c63b39a]]
+[2026-07-30T23:23:27.112Z] [INFO] Stopped.
+[2026-07-30T23:23:27.113Z] [INFO] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2026-07-30T23:23:27.116Z] [INFO] HikariPool-1 - Shutdown initiated...
+[2026-07-30T23:23:28.134Z] [INFO] HikariPool-1 - Shutdown completed.
+[2026-07-30T23:23:33.634Z] [INFO] Starting DetectorApplication using Java 21.0.11 with PID 5000 (C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd\target\classes started by Usuario in C:\Users\Usuario\OneDrive\Escritorio\SEPTIMO SEMESTRE\APLICACIONES DISTRIBUIDAS\Proyecto-asistencia\proyecto-backEnd)
+[2026-07-30T23:23:33.637Z] [INFO] No active profile set, falling back to 1 default profile: "default"
+[2026-07-30T23:23:34.320Z] [INFO] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2026-07-30T23:23:34.397Z] [INFO] Finished Spring Data repository scanning in 65 ms. Found 5 JPA repository interfaces.
+[2026-07-30T23:23:34.966Z] [INFO] Tomcat initialized with port 8080 (http)
+[2026-07-30T23:23:34.995Z] [INFO] Initializing ProtocolHandler ["http-nio-8080"]
+[2026-07-30T23:23:34.997Z] [INFO] Starting service [Tomcat]
+[2026-07-30T23:23:34.998Z] [INFO] Starting Servlet engine: [Apache Tomcat/11.0.21]
+[2026-07-30T23:23:35.100Z] [INFO] Root WebApplicationContext: initialization completed in 1418 ms
+[2026-07-30T23:23:35.282Z] [INFO] HHH008540: Processing PersistenceUnitInfo [name: default]
+[2026-07-30T23:23:35.368Z] [INFO] HHH000001: Hibernate ORM core version 7.2.12.Final
+[2026-07-30T23:23:35.897Z] [INFO] No LoadTimeWeaver setup: ignoring JPA class transformer
+[2026-07-30T23:23:35.949Z] [INFO] HikariPool-1 - Starting...
+[2026-07-30T23:23:37.300Z] [INFO] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1e000a17
+[2026-07-30T23:23:37.303Z] [INFO] HikariPool-1 - Start completed.
+[2026-07-30T23:23:37.471Z] [WARN] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2026-07-30T23:23:38.051Z] [INFO] HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-noisy-pine-apct0js4.c-7.us-east-1.aws.neon.tech:5432/neondb?sslmode=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.10
+	Default catalog/schema: neondb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2026-07-30T23:23:39.441Z] [INFO] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2026-07-30T23:23:40.176Z] [INFO] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2026-07-30T23:23:40.262Z] [INFO] Hibernate is in classpath; If applicable, HQL parser will be used.
+[2026-07-30T23:23:40.797Z] [WARN] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2026-07-30T23:23:41.182Z] [INFO] Starting...
+[2026-07-30T23:23:41.183Z] [INFO] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@1f8e1096]]
+[2026-07-30T23:23:41.184Z] [INFO] Started.
+[2026-07-30T23:23:41.185Z] [INFO] Starting ProtocolHandler ["http-nio-8080"]
+[2026-07-30T23:23:41.212Z] [INFO] Tomcat started on port 8080 (http) with context path '/'
+[2026-07-30T23:23:41.220Z] [INFO] Started DetectorApplication in 8.221 seconds (process running for 8.643)
+[2026-07-30T23:24:41.197Z] [INFO] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+[2026-07-30T23:25:58.183Z] [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2026-07-30T23:25:58.183Z] [INFO] Initializing Servlet 'dispatcherServlet'
+[2026-07-30T23:25:58.185Z] [INFO] Completed initialization in 2 ms
+[2026-07-30T23:54:41.217Z] [INFO] WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 2, active threads = 1, queued tasks = 0, completed tasks = 1]

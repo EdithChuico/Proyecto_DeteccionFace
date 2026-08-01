@@ -11,8 +11,25 @@ const Estadisticas = () => {
     const [asistencias, setAsistencias] = useState([]);
     const [totalEmpleados, setTotalEmpleados] = useState(0);
     const [totalAdmins, setTotalAdmins] = useState(0);
+    const [analisisIA, setAnalisisIA] = useState('');
+    const [pensando, setPensando] = useState(false);
 
-
+    const generarAnalisisIA = async () => {
+        setPensando(true);
+        try {
+            // Nota: Cambia el 15 y el 5 por las variables reales de tu estado si las tienes a mano
+            const res = await fetch('http://localhost:4000/api/ia/analisis', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ puntuales: 15, atrasos: 5 })
+            });
+            const data = await res.json();
+            setAnalisisIA(data.analisis);
+        } catch (error) {
+            setAnalisisIA("No se pudo conectar con el motor de IA.");
+        }
+        setPensando(false);
+    };
     useEffect(() => {
         const obtenerTotalAdmins = async () => {
             try {
@@ -149,7 +166,25 @@ const Estadisticas = () => {
                     </div>
                 </div>
             </div>
+            <div style={{ marginTop: '20px', padding: '15px', border: '1px solid #7c3aed', borderRadius: '8px', backgroundColor: '#f3e8ff' }}>
+                <h4 style={{ color: '#6d28d9', margin: '0 0 10px 0' }}>Análisis Predictivo (Ollama AI)</h4>
+
+                <button
+                    onClick={generarAnalisisIA}
+                    disabled={pensando}
+                    style={{ padding: '8px 16px', backgroundColor: '#7c3aed', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
+                >
+                    {pensando ? 'Analizando datos...' : 'Generar Análisis con IA'}
+                </button>
+
+                {analisisIA && (
+                    <p style={{ marginTop: '15px', fontStyle: 'italic', color: '#4c1d95' }}>
+                        "{analisisIA}"
+                    </p>
+                )}
+            </div>
         </div>
+
     );
 };
 

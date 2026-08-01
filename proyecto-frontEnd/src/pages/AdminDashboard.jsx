@@ -1,22 +1,32 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Webcam from 'react-webcam';
-import { Users, Activity, AlertTriangle, Camera, Check, Loader2, MapPin, Crosshair, LogOut } from 'lucide-react';
+// Añadimos AlertCircle para el modal de error
+import { Users, Activity, AlertTriangle, Camera, Check, Loader2, MapPin, Crosshair, LogOut, AlertCircle } from 'lucide-react';
 import './AdminDashboard.css';
 import { apiFetch } from '../api';
 import Estadisticas from '../components/Estadisticas';
 
 const AdminDashboard = () => {
     const navigate = useNavigate();
-    const [activeTab, setActiveTab] = useState('configuracion');
+    const [activeTab, setActiveTab] = useState('estadisticas');
     const [listaEmpleados, setListaEmpleados] = useState([]);
     const [listaAsistencias, setListaAsistencias] = useState([]);
+    const [correo, setCorreo] = useState('');
+    // ESTADO PARA EL MODAL GLOBAL DE SESIÓN
+    const [sesionExpirada, setSesionExpirada] = useState(false);
+
+    // NUEVOS ESTADOS PARA REPORTES (PDF)
+    const [empleadoReporte, setEmpleadoReporte] = useState('TODOS');
+    const [mesReporte, setMesReporte] = useState(new Date().getMonth() + 1);
+    const [anioReporte, setAnioReporte] = useState(new Date().getFullYear());
+    const [enviandoReportes, setEnviandoReportes] = useState(false);
 
     // ESTADOS PARA LA GEOCERCA
     const [latitud, setLatitud] = useState('-0.253039');
     const [longitud, setLongitud] = useState('-79.175355');
     const [radio, setRadio] = useState('100');
-    // Estados para la cámara y el formulario de enrolamiento automatizado
+
     const webcamRef = useRef(null);
     const [errorCedula, setErrorCedula] = useState('');
     const [nombre, setNombre] = useState('');
@@ -26,7 +36,34 @@ const AdminDashboard = () => {
     const [registroCompleto, setRegistroCompleto] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [empleadoSeleccionado, setEmpleadoSeleccionado] = useState({ id: '', nombre: '', estado: 'Activo' });
-    // NUEVA FUNCIÓN: Validador de cédula ecuatoriana
+
+    // ✨ EL VIGILANTE SUPREMO DE LA SESIÓN ✨
+    // Revisa silenciosamente cada 5 segundos si el token ya caducó
+    useEffect(() => {
+        const verificarVigenciaToken = () => {
+            const token = localStorage.getItem('admin_token');
+            if (!token) return;
+
+            try {
+                // Decodificamos la carga útil del JWT (la parte central) para leer la fecha de expiración (exp)
+                const payloadCodificado = token.split('.')[1];
+                const payloadDecodificado = JSON.parse(atob(payloadCodificado));
+
+                // exp viene en segundos, lo pasamos a milisegundos
+                const tiempoExpiracion = payloadDecodificado.exp * 1000;
+
+                if (Date.now() >= tiempoExpiracion) {
+                    setSesionExpirada(true);
+                }
+            } catch (error) {
+                console.error("Error validando la sesión:", error);
+            }
+        };
+
+        const idIntervalo = setInterval(verificarVigenciaToken, 5000);
+        return () => clearInterval(idIntervalo); // Limpiamos al salir
+    }, []);
+
     const validarCedulaEcuatoriana = (cedula) => {
         if (!cedula || cedula.length !== 10 || !/^\d+$/.test(cedula)) return false;
         const provincia = parseInt(cedula.substring(0, 2), 10);
@@ -67,7 +104,6 @@ const AdminDashboard = () => {
         }
     }, [activeTab]);
 
-    // FUNCIÓN PARA OBTENER UBICACIÓN ACTUAL DEL ADMIN
     const obtenerUbicacionActual = () => {
         if ("geolocation" in navigator) {
             navigator.geolocation.getCurrentPosition(
@@ -87,6 +123,31 @@ const AdminDashboard = () => {
         localStorage.removeItem('admin_nombre');
         localStorage.removeItem('admin_foto');
         navigate('/login');
+    };
+
+    const enviarReportes = async () => {
+        setEnviandoReportes(true);
+        try {
+            const respuesta = await apiFetch('http://localhost:8080/api/reportes/enviar', {
+                method: 'POST',
+                body: JSON.stringify({
+                    empleadoId: empleadoReporte,
+                    mes: parseInt(mesReporte),
+                    anio: parseInt(anioReporte)
+                })
+            });
+
+            if (respuesta && respuesta.ok) {
+                alert("¡Los reportes PDF se están generando y enviando en segundo plano! Revisa los correos en unos momentos.");
+            } else {
+                alert("Hubo un error al solicitar el envío de reportes al servidor.");
+            }
+        } catch (error) {
+            console.error("Error al enviar reportes:", error);
+            alert("Fallo de red al intentar conectar con el servidor.");
+        } finally {
+            setEnviandoReportes(false);
+        }
     };
 
     const guardarGeocercaEnBD = async () => {
@@ -145,6 +206,7 @@ const AdminDashboard = () => {
                                 body: JSON.stringify({
                                     empleadoId: idEmpleado,
                                     nombre: nombre,
+                                    correo: correo,
                                     fotosBase64: fotosAcumuladas
                                 })
                             });
@@ -209,9 +271,35 @@ const AdminDashboard = () => {
 
     return (
         <div className="admin-container">
+
+            {/* ✨ MODAL DE SESIÓN EXPIRADA (Global) ✨ */}
+            {sesionExpirada && (
+                <div
+                    style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', backgroundColor: 'rgba(15, 23, 42, 0.8)', zIndex: 9999, display: 'flex', justifyContent: 'center', alignItems: 'center', backdropFilter: 'blur(4px)' }}
+                    onClick={cerrarSesion}
+                >
+                    <div
+                        style={{ backgroundColor: 'white', padding: '30px', borderRadius: '12px', width: '90%', maxWidth: '400px', textAlign: 'center', boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)' }}
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <AlertCircle size={50} color="#e11d48" style={{ margin: '0 auto 15px auto' }} />
+                        <h3 style={{ color: '#0f172a', fontSize: '20px', marginBottom: '10px' }}>Su sesión ha expirado</h3>
+                        <p style={{ color: '#64748b', fontSize: '14px', marginBottom: '25px' }}>
+                            Por su seguridad, el acceso fue revocado. Debe iniciar sesión nuevamente para continuar.
+                        </p>
+                        <button
+                            onClick={cerrarSesion}
+                            style={{ backgroundColor: '#2563eb', color: 'white', border: 'none', padding: '12px 24px', borderRadius: '6px', fontWeight: 'bold', width: '100%', cursor: 'pointer' }}
+                        >
+                            Aceptar e Iniciar Sesión
+                        </button>
+                    </div>
+                </div>
+            )}
+
             {/* MENÚ LATERAL */}
             <aside className="admin-sidebar">
-                <h2>Admin Panel</h2>
+                <h2>Panel de Administrador</h2>
                 <nav className="admin-nav">
                     <button onClick={() => setActiveTab('estadisticas')} className={`nav-btn ${activeTab === 'estadisticas' ? 'activo' : ''}`}>
                         <Activity size={20} /> Monitoreo en Vivo
@@ -222,8 +310,8 @@ const AdminDashboard = () => {
                     <button onClick={() => setActiveTab('configuracion')} className={`nav-btn ${activeTab === 'configuracion' ? 'activo' : ''}`}>
                         <MapPin size={20} /> Geocerca GPS
                     </button>
-                    <button className="nav-btn">
-                        <AlertTriangle size={20} /> Multas (Inhabilitada)
+                    <button onClick={() => setActiveTab('multas')} className={`nav-btn ${activeTab === 'multas' ? 'activo' : ''}`}>
+                        <AlertTriangle size={20} /> Generar Multas (PDF)
                     </button>
                     <button onClick={cerrarSesion} className="nav-btn">
                         <LogOut size={20} /> Cerrar Sesión
@@ -255,7 +343,6 @@ const AdminDashboard = () => {
                                     className={`input-text ${errorCedula ? 'input-error' : ''}`}
                                     style={errorCedula ? { borderColor: '#ef4444' } : {}}
                                 />
-                                {/* TEXTO DE ERROR ROJO DEBAJO DEL INPUT */}
                                 {errorCedula && (
                                     <span style={{ color: '#ef4444', fontSize: '13px', marginTop: '4px', display: 'block', fontWeight: '500' }}>
                                         {errorCedula}
@@ -265,6 +352,16 @@ const AdminDashboard = () => {
                             <div className="form-group">
                                 <label className="form-label">Nombre Completo:</label>
                                 <input type="text" placeholder="Ej. Edith Chuico" value={nombre} onChange={(e) => setNombre(e.target.value)} disabled={enrolando || registroCompleto} className="input-text" />
+                            </div>
+                            <div style={{ display: 'flex', flexDirection: 'column', marginTop: '10px' }}>
+                                <label style={{ fontWeight: 'bold', marginBottom: '5px', color: '#1f2937' }}>Correo Electrónico:</label>
+                                <input
+                                    type="email"
+                                    placeholder="Ej. usuario@espe.edu.ec"
+                                    value={correo}
+                                    onChange={(e) => setCorreo(e.target.value)}
+                                    style={{ padding: '8px', border: '1px solid #3b82f6', borderRadius: '4px' }}
+                                />
                             </div>
                         </div>
 
@@ -371,6 +468,78 @@ const AdminDashboard = () => {
                     </section>
                 )}
 
+                {activeTab === 'multas' && (
+                    <section className="admin-section">
+                        <h2>Generación y Envío de Reportes (PDF)</h2>
+                        <p className="text-muted">
+                            Selecciona un trabajador o envíalo a todos. El sistema generará el PDF con las asistencias y multas del mes y lo enviará por correo automáticamente gracias a la cola asíncrona.
+                        </p>
+
+                        <div className="form-group" style={{ marginTop: '20px' }}>
+                            <label className="form-label">Seleccionar Trabajador:</label>
+                            <select
+                                className="select-custom"
+                                value={empleadoReporte}
+                                onChange={(e) => setEmpleadoReporte(e.target.value)}
+                            >
+                                <option value="TODOS">Todos los Empleados (Envío Masivo)</option>
+                                {listaEmpleados.map(emp => (
+                                    <option key={emp.id} value={emp.id}>{emp.nombre} - {emp.id}</option>
+                                ))}
+                            </select>
+                        </div>
+
+                        <div style={{ display: 'flex', gap: '20px', marginTop: '15px' }}>
+                            <div className="form-group" style={{ flex: 1 }}>
+                                <label className="form-label">Mes:</label>
+                                <select
+                                    className="select-custom"
+                                    value={mesReporte}
+                                    onChange={(e) => setMesReporte(e.target.value)}
+                                >
+                                    <option value="1">Enero</option>
+                                    <option value="2">Febrero</option>
+                                    <option value="3">Marzo</option>
+                                    <option value="4">Abril</option>
+                                    <option value="5">Mayo</option>
+                                    <option value="6">Junio</option>
+                                    <option value="7">Julio</option>
+                                    <option value="8">Agosto</option>
+                                    <option value="9">Septiembre</option>
+                                    <option value="10">Octubre</option>
+                                    <option value="11">Noviembre</option>
+                                    <option value="12">Diciembre</option>
+                                </select>
+                            </div>
+                            <div className="form-group" style={{ flex: 1 }}>
+                                <label className="form-label">Año:</label>
+                                <input
+                                    type="number"
+                                    className="input-text"
+                                    value={anioReporte}
+                                    onChange={(e) => setAnioReporte(e.target.value)}
+                                />
+                            </div>
+                        </div>
+
+                        <button
+                            onClick={enviarReportes}
+                            disabled={enviandoReportes}
+                            className="btn-captura"
+                            style={{ marginTop: '25px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px' }}
+                        >
+                            {enviandoReportes ? (
+                                <>
+                                    <Loader2 size={20} style={{ animation: 'spin 2s linear infinite' }} />
+                                    Procesando envío asíncrono...
+                                </>
+                            ) : (
+                                'Generar y Enviar Reportes PDF'
+                            )}
+                        </button>
+                    </section>
+                )}
+
                 {activeTab === 'estadisticas' && (
                     <section className="admin-section">
                         <Estadisticas />
@@ -431,7 +600,7 @@ const AdminDashboard = () => {
                     </section>
                 )}
 
-                {/*  MODAL DE EDICIÓN Y DESACTIVACIÓN */}
+                {/* MODAL DE EDICIÓN Y DESACTIVACIÓN */}
                 {isModalOpen && (
                     <div className="modal-overlay">
                         <div className="modal-content">
@@ -440,7 +609,6 @@ const AdminDashboard = () => {
 
                                 <div className="form-group">
                                     <label className="form-label">Cédula / ID (Solo lectura):</label>
-                                    {/* La cédula está deshabilitada porque cambiar la Primary Key en SQL puede romper las relaciones de asistencia */}
                                     <input type="text" className="input-text" value={empleadoSeleccionado.id} disabled style={{ backgroundColor: '#f1f5f9', cursor: 'not-allowed' }} />
                                 </div>
 

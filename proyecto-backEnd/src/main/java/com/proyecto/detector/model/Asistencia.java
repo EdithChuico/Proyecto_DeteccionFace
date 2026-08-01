@@ -15,6 +15,7 @@ public class Asistencia {
 
     private String empleadoId;
     private LocalDateTime fechaHora;
+    private String tipoMarcacion;
     private String estado; // "A Tiempo" o "Atraso"
-    private double multa;
+    private double multa= 0.0;
 }

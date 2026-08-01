@@ -11,6 +11,7 @@ public class Empleado {
     @Id
     private String id;
     private String nombre;
+    private String correo;
     private String rutaDataset;
     private String estado = "Activo";
 }

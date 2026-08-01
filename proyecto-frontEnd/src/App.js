@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import EmpleadoView from './pages/EmpleadoView';
 import AdminDashboard from './pages/AdminDashboard';
 import Login from './pages/Login';
+import RestablecerPassword from './pages/RestablecerPassword';
 
 const RutaProtegidaAdmin = ({ children }) => {
   const token = localStorage.getItem('admin_token');
@@ -16,11 +17,13 @@ function App() {
       <div className="app-container" style={{ fontFamily: 'sans-serif', backgroundColor: '#f4f7f6', minHeight: '100vh' }}>
         <Routes>
 
-          <Route path="/" element={<Navigate to="/empleado" />} />
+          <Route path="/" element={<Navigate to="/login" replace />} />
 
           <Route path="/empleado" element={<EmpleadoView />} />
 
           <Route path="/login" element={<Login />} />
+
+          <Route path="/restablecer-password" element={<RestablecerPassword />} />
 
           <Route
             path="/admin/*"

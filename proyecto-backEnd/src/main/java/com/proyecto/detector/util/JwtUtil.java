@@ -11,7 +11,7 @@ import java.util.Date;
 @Component
 public class JwtUtil {
     private final String SECRET_KEY = "ServicioSeguroGenerarTokenSeguro12345";
-    private final long EXPIRATION_TIME = 1200000;
+    private final long EXPIRATION_TIME = 600000;
 
     private Key getSigningKey() {
         return Keys.hmacShaKeyFor(SECRET_KEY.getBytes());

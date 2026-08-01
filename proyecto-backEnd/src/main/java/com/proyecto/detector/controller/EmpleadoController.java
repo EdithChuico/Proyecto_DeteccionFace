@@ -52,6 +52,7 @@ public class EmpleadoController {
             Empleado nuevoEmpleado = new Empleado();
             nuevoEmpleado.setId(request.getEmpleadoId());
             nuevoEmpleado.setNombre(request.getNombre());
+            nuevoEmpleado.setCorreo(request.getCorreo());
             nuevoEmpleado.setRutaDataset(urlPocketBase);
 
             empleadoRepository.save(nuevoEmpleado);
@@ -118,12 +119,14 @@ class EmpleadoModificarRequest {
     public String getModificadoPor() { return modificadoPor; }
     public void setModificadoPor(String modificadoPor) { this.modificadoPor = modificadoPor; }
 }
-// Recibe una Lista de fotos en vez de una sola
 class EnrolarRequest {
     private String empleadoId;
     private String nombre;
     private List<String> fotosBase64;
+    private String correo;
 
+    public String getCorreo() { return correo; }
+    public void setCorreo(String correo) { this.correo = correo; }
     public String getEmpleadoId() { return empleadoId; }
     public void setEmpleadoId(String empleadoId) { this.empleadoId = empleadoId; }
     public String getNombre() { return nombre; }

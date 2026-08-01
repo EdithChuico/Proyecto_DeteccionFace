@@ -10,7 +10,6 @@ export const apiFetch = async (url, options = {}) => {
     const response = await fetch(url, { ...options, headers });
 
     if (response.status === 401) {
-        alert("Tu sesión ha expirado. Por favor, inicia sesión de nuevo.");
         localStorage.removeItem('admin_token');
         localStorage.removeItem('admin_nombre');
         window.location.href = '/login';
