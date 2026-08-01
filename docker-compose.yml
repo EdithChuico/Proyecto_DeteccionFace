@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+    frontend:
+        image: asistencia-frontend:latest
+        ports:
+            - "3000:80"
+        deploy:
+            replicas: 2 # 2 copias de React corriendo a la vez
+            restart_policy:
+                condition: on-failure
+
+    backend:
+        image: asistencia-backend:latest
+        ports:
+            - "8080:8080"
+        deploy:
+            replicas: 3 # 3 copias de Spring Boot balanceando la carga
+            restart_policy:
+                condition: on-failure
+
+    node-pasarela:
+        image: asistencia-node:latest
+        ports:
+            - "4000:4000"
+        deploy:
+            replicas: 2
+            restart_policy:
+                condition: on-failure
+
+    python-ia:
+        image: asistencia-ia:latest
+        ports:
+            - "5000:5000"
+        deploy:
+            replicas: 1 # Servicio de IA configurado para una instancia
+            restart_policy:
+                condition: on-failure
+
+# Red interna segura donde se hablan los contenedores
+networks:
+    default:
+        driver: overlay

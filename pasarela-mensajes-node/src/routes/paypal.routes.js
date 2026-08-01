@@ -12,7 +12,7 @@ router.post('/crear-pago', async (req, res) => {
         const BASE_URL = process.env.PAYPAL_BASE_URL;
 
         if (!CLIENT_ID || !CLIENT_SECRET) {
-            console.error("🚨 Faltan las credenciales en el .env");
+            console.error("Faltan las credenciales en el .env");
             return res.status(500).json({ error: "Credenciales no configuradas" });
         }
 
