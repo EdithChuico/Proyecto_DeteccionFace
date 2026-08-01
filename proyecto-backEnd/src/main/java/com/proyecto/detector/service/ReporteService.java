@@ -1,17 +1,12 @@
 package com.proyecto.detector.service;
 
-import com.lowagie.text.*;
-import com.lowagie.text.Font;
-import com.lowagie.text.Image;
-import com.lowagie.text.Rectangle;
-import com.lowagie.text.pdf.PdfPCell;
-import com.lowagie.text.pdf.PdfPTable;
-import com.lowagie.text.pdf.PdfWriter;
-import com.proyecto.detector.model.Asistencia;
-import com.proyecto.detector.model.Empleado;
-import com.proyecto.detector.repository.AsistenciaRepository;
-import com.proyecto.detector.repository.EmpleadoRepository;
-import jakarta.mail.internet.MimeMessage;
+import java.awt.Color;
+import java.io.ByteArrayOutputStream;
+import java.time.LocalDateTime;
+import java.time.YearMonth;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ByteArrayResource;
@@ -21,12 +16,24 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
-import java.awt.*;
-import java.io.ByteArrayOutputStream;
-import java.time.LocalDateTime;
-import java.time.YearMonth;
-import java.time.format.DateTimeFormatter;
-import java.util.List;
+import com.lowagie.text.Chunk;
+import com.lowagie.text.Document;
+import com.lowagie.text.Element;
+import com.lowagie.text.FontFactory;
+import com.lowagie.text.Image;
+import com.lowagie.text.PageSize;
+import com.lowagie.text.Paragraph;
+import com.lowagie.text.Phrase;
+import com.lowagie.text.Rectangle;
+import com.lowagie.text.pdf.PdfPCell;
+import com.lowagie.text.pdf.PdfPTable;
+import com.lowagie.text.pdf.PdfWriter;
+import com.proyecto.detector.model.Asistencia;
+import com.proyecto.detector.model.Empleado;
+import com.proyecto.detector.repository.AsistenciaRepository;
+import com.proyecto.detector.repository.EmpleadoRepository;
+
+import jakarta.mail.internet.MimeMessage;
 
 @Service
 public class ReporteService {
@@ -189,52 +196,52 @@ public class ReporteService {
     }
 
     private String construirPlantillaHtml(Empleado empleado, int mes, int anio) {
-        return "<!DOCTYPE html>" +
-                "<html lang='es'>" +
-                "<head><meta charset='UTF-8'></head>" +
-                "<body style='margin: 0; padding: 0; background-color: #f4f6f9; font-family: Arial, sans-serif;'>" +
-                "  <table role='presentation' width='100%' cellspacing='0' cellpadding='0' border='0' style='padding: 20px 0;'>" +
-                "    <tr>" +
-                "      <td align='center'>" +
-                "        <table role='presentation' width='600' cellspacing='0' cellpadding='0' border='0' style='background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);'>" +
-                "          " +
-                "          <tr>" +
-                "            <td style='background-color: #003366; padding: 30px; text-align: center;'>" +
-                // ESTA LÍNEA LLAMA AL LOGO INCRUSTADO EN EL HELPER (cid:logoFactura)
-                "              <img src='cid:logoFactura' alt='Smart Assistance Logo' width='180' style='display: block; margin: 0 auto; margin-bottom: 15px;' />" +
-                "              <h1 style='color: #ffffff; margin: 0; font-size: 24px; letter-spacing: 1px;'>Smart Assistance</h1>" +
-                "            </td>" +
-                "          </tr>" +
-                "          " +
-                "          <tr>" +
-                "            <td style='padding: 40px 30px;'>" +
-                "              <h2 style='color: #1e293b; margin-top: 0; font-size: 20px;'>Estado de Cuenta Mensual</h2>" +
-                "              <p style='color: #475569; font-size: 16px; line-height: 1.6;'>Estimado/a <strong>" + empleado.getNombre() + "</strong>,</p>" +
-                "              <p style='color: #475569; font-size: 16px; line-height: 1.6;'>" +
-                "                Adjunto a este correo encontrará su reporte consolidado de ingresos, asistencias y cálculo de penalidades correspondiente al período <strong>" + mes + "/" + anio + "</strong>." +
-                "              </p>" +
-                "              <div style='background-color: #f8fafc; border-left: 4px solid #003366; padding: 15px; margin: 25px 0;'>" +
-                "                <p style='margin: 0; color: #334155; font-size: 14px;'>" +
-                "                  <strong>Nota de seguridad:</strong> El archivo PDF adjunto contiene información confidencial de su registro laboral. Le sugerimos revisarlo y conservarlo para sus registros." +
-                "                </p>" +
-                "              </div>" +
-                "              <p style='color: #475569; font-size: 15px; margin-bottom: 0;'>Atentamente,</p>" +
-                "              <p style='color: #003366; font-size: 16px; font-weight: bold; margin-top: 5px;'>Departamento de Recursos Humanos</p>" +
-                "            </td>" +
-                "          </tr>" +
-                "          " +
-                "          <tr>" +
-                "            <td style='background-color: #f1f5f9; padding: 20px; text-align: center; border-top: 1px solid #e2e8f0;'>" +
-                "              <p style='color: #64748b; font-size: 12px; margin: 0;'>" +
-                "                Este es un correo generado automáticamente por la plataforma Smart Assistance." +
-                "              </p>" +
-                "            </td>" +
-                "          </tr>" +
-                "        </table>" +
-                "      </td>" +
-                "    </tr>" +
-                "  </table>" +
-                "</body>" +
-                "</html>";
+        return "<!DOCTYPE html>"
+                + "<html lang='es'>"
+                + "<head><meta charset='UTF-8'></head>"
+                + "<body style='margin: 0; padding: 0; background-color: #f4f6f9; font-family: Arial, sans-serif;'>"
+                + "  <table role='presentation' width='100%' cellspacing='0' cellpadding='0' border='0' style='padding: 20px 0;'>"
+                + "    <tr>"
+                + "      <td align='center'>"
+                + "        <table role='presentation' width='600' cellspacing='0' cellpadding='0' border='0' style='background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);'>"
+                + "          "
+                + "          <tr>"
+                + "            <td style='background-color: #003366; padding: 30px; text-align: center;'>"
+                + // ESTA LÍNEA LLAMA AL LOGO INCRUSTADO EN EL HELPER (cid:logoFactura)
+                "              <img src='cid:logoFactura' alt='Smart Assistance Logo' width='180' style='display: block; margin: 0 auto; margin-bottom: 15px;' />"
+                + "              <h1 style='color: #ffffff; margin: 0; font-size: 24px; letter-spacing: 1px;'>Smart Assistance</h1>"
+                + "            </td>"
+                + "          </tr>"
+                + "          "
+                + "          <tr>"
+                + "            <td style='padding: 40px 30px;'>"
+                + "              <h2 style='color: #1e293b; margin-top: 0; font-size: 20px;'>Estado de Cuenta Mensual</h2>"
+                + "              <p style='color: #475569; font-size: 16px; line-height: 1.6;'>Estimado/a <strong>" + empleado.getNombre() + "</strong>,</p>"
+                + "              <p style='color: #475569; font-size: 16px; line-height: 1.6;'>"
+                + "                Adjunto a este correo encontrará su reporte consolidado de ingresos, asistencias y cálculo de penalidades correspondiente al período <strong>" + mes + "/" + anio + "</strong>."
+                + "              </p>"
+                + "              <div style='background-color: #f8fafc; border-left: 4px solid #003366; padding: 15px; margin: 25px 0;'>"
+                + "                <p style='margin: 0; color: #334155; font-size: 14px;'>"
+                + "                  <strong>Nota de seguridad:</strong> El archivo PDF adjunto contiene información confidencial de su registro laboral. Le sugerimos revisarlo y conservarlo para sus registros."
+                + "                </p>"
+                + "              </div>"
+                + "              <p style='color: #475569; font-size: 15px; margin-bottom: 0;'>Atentamente,</p>"
+                + "              <p style='color: #003366; font-size: 16px; font-weight: bold; margin-top: 5px;'>Departamento de Recursos Humanos</p>"
+                + "            </td>"
+                + "          </tr>"
+                + "          "
+                + "          <tr>"
+                + "            <td style='background-color: #f1f5f9; padding: 20px; text-align: center; border-top: 1px solid #e2e8f0;'>"
+                + "              <p style='color: #64748b; font-size: 12px; margin: 0;'>"
+                + "                Este es un correo generado automáticamente por la plataforma Smart Assistance."
+                + "              </p>"
+                + "            </td>"
+                + "          </tr>"
+                + "        </table>"
+                + "      </td>"
+                + "    </tr>"
+                + "  </table>"
+                + "</body>"
+                + "</html>";
     }
 }
