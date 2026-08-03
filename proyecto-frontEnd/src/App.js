@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import EmpleadoView from './pages/EmpleadoView';
 import AdminDashboard from './pages/AdminDashboard';
 import Login from './pages/Login';
+import PruebaGeocerca from './pages/PruebaGeocerca';
 import RestablecerPassword from './pages/RestablecerPassword';
 
 const RutaProtegidaAdmin = ({ children }) => {
@@ -24,7 +25,7 @@ function App() {
           <Route path="/login" element={<Login />} />
 
           <Route path="/restablecer-password" element={<RestablecerPassword />} />
-
+          <Route path="/pruebas-geocerca" element={<PruebaGeocerca />} />
           <Route
             path="/admin/*"
             element={

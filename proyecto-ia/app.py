@@ -18,17 +18,14 @@ def verificar_rostro():
         data = request.json
         foto_empleado_live = data.get('fotoActual')
         fotos_dataset = data.get('fotosBaseDatos') # Recibirá la lista de 3 fotos de PocketBase
-
         if not foto_empleado_live or not fotos_dataset:
             return jsonify({"error": "Faltan imágenes para comparar"}), 400
-
         img_live = decodificar_imagen(foto_empleado_live)
         for foto_db_base64 in fotos_dataset:
             img_db = decodificar_imagen(foto_db_base64)
             
             try:
                 resultado = DeepFace.verify(img_live, img_db, model_name="Facenet512", enforce_detection=False)
-                
                 if resultado['verified']:
                     return jsonify({
                         "reconocido": True, 
@@ -38,9 +35,7 @@ def verificar_rostro():
             except Exception as e:
                 print("Error en iteración de DeepFace:", str(e))
                 continue # Si falla una foto, intenta con la siguiente
-
         return jsonify({"reconocido": False, "mensaje": "Rostro no coincide con el dataset"}), 401
-
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
