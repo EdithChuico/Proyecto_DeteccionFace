@@ -55,18 +55,39 @@ router.post('/crear-pago', async (req, res) => {
 
         if (!orderRes.ok) {
             const errorOrden = await orderRes.text();
-            console.error("🔥 PayPal falló al crear la orden. Detalle:", errorOrden);
+            console.error("PayPal falló al crear la orden. Detalle:", errorOrden);
             throw new Error("Fallo al crear la orden de pago");
         }
 
         const orderData = await orderRes.json();
+        // ---------------------------------------------------------
+        // EVENTO PARA EL LABORATORIO: payment.created
+        // ---------------------------------------------------------
+        const eventoCreated = {
+            event: "payment.created",
+            transactionId: orderData.id, // El ID que nos da PayPal
+            provider: "PayPal",
+            amount: parseFloat(monto),
+            currency: "USD",
+            status: "CREATED",
+            date: new Date().toISOString()
+        };
+
+        console.log("=========================================");
+        console.log("NUEVO MENSAJE PUBLICADO:");
+        console.log(JSON.stringify(eventoCreated, null, 2));
+        console.log("=========================================");
+        // ---------------------------------------------------------
 
         // 3. Enviar enlace al frontend
         const enlaceAprobacion = orderData.links.find(link => link.rel === "approve").href;
-        res.json({ enlace: enlaceAprobacion });
+        res.json({
+            enlace: enlaceAprobacion,
+            mensajePublicado: eventoCreated
+        });
 
     } catch (error) {
-        console.error("❌ Error general en la ruta de pagos:", error.message);
+        console.error(" Error general en la ruta de pagos:", error.message);
         res.status(500).json({ error: "Error creando pago en PayPal" });
     }
 });
@@ -91,7 +112,7 @@ router.post('/capturar-pago', async (req, res) => {
         });
         const { access_token } = await tokenRes.json();
 
-        // 2. CAPTURAR EL DINERO (Este es el paso que faltaba para que asome en la cuenta)
+        // 2. CAPTURAR EL DINERO
         const captureRes = await fetch(`${BASE_URL}/v2/checkout/orders/${token}/capture`, {
             method: 'POST',
             headers: {
@@ -101,7 +122,37 @@ router.post('/capturar-pago', async (req, res) => {
         });
 
         const captureData = await captureRes.json();
-        res.json(captureData);
+
+        // ---------------------------------------------------------
+        // EVENTO PARA EL LABORATORIO: payment.approved
+        // ---------------------------------------------------------
+        let eventoApproved = null;
+        if (captureData.status === "COMPLETED") {
+            // Buscamos el monto en la respuesta de PayPal (suele estar anidado)
+            const captureMonto = captureData.purchase_units[0].payments.captures[0].amount.value;
+
+            eventoApproved = {
+                event: "payment.approved",
+                transactionId: captureData.id,
+                provider: "PayPal",
+                amount: parseFloat(captureMonto),
+                currency: "USD",
+                status: "APPROVED",
+                date: new Date().toISOString()
+            };
+
+            console.log("=========================================");
+            console.log("NUEVO MENSAJE PUBLICADO Y CONSUMIDO:");
+            console.log(JSON.stringify(eventoApproved, null, 2));
+            console.log("Acción del consumidor: Guardando el resultado y actualizando el estado de la transacción en el sistema de asistencia.");
+            console.log("=========================================");
+        }
+        // ---------------------------------------------------------
+
+        res.json({
+            data: captureData,
+            mensajePublicado: eventoApproved
+        });
 
     } catch (error) {
         console.error("❌ Error capturando pago:", error);
